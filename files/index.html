@@ -1,0 +1,136 @@
+ <!DOCTYPE html>
+ <html lang="en">
+   <head>
+     <meta http-equiv="content-type" content="text/html"; charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <title>Top 50 Spotify Songs of 2019</title>
+     <!-- Hooking the CSS file into the HTML -->
+     <link rel="stylesheet" type="text/css" media="screen" href="screen.css">
+  </head>
+
+   <!-- I've created the file d3.v7.js which contains the whole v7.1.1 d3.js
+   library. The following code sources the file -->
+<script src="d3.v7.js"></script>
+
+<!-- This is where the d3.js code will be written -->
+<script src="app.js"></script>
+
+<body>
+
+  <div id="page">
+    <header>
+      <!-- Creating a hyperlink redirecting back to the website -->
+      <a class="logo" title="Top 50 Spotify Songs of 2019" href="https://erica63.github.io/Data-Visualisation-Using-d3.js/"><span>Top 50 Spotify Songs of 2019</span></a>
+      <!-- <img src= "../graphics/spotifyIcon.svg" alt="Spotify"> -->
+      <div class="hero">
+        <h1>Top Artists</h1>
+        <!-- May remove this hyperlink once I decide if I want the website to be one entire page
+        you can scroll through or to have multiple pages with different vizs or both -->
+        <a class="btn" title="See here" href="#">See here</a>
+
+      </div>
+
+    </header>
+
+<!-- Creating unique class for each section in order to differentiate between them -->
+<!-- Have to come back and readjust the HTML once I start creating the visualizations -->
+    <section class="main">
+
+      <aside>
+        <div class="content trending">
+          <h3><a href="#">What&apos;s trending</a></h3>
+          <p>text</p>
+        </div>
+      </aside>
+
+      <aside>
+        <div class="content audio-features">
+          <h3><a href="#">Audio features</a></h3>
+          <p>text</p>
+        </div>
+      </aside>
+
+      <aside>
+        <div class="content average-length">
+          <h3><a href="#">Average length</a></h3>
+          <p>text</p>
+        </div>
+      </aside>
+
+    </section>
+
+    <section class="visualization">
+      <article>
+        <h2>viz</h2>
+        <p>text</p>
+        <a class="btn" title="viz" href="#">Learn More</a>
+      </article>
+
+    </section>
+
+    <section class="how-to">
+      <aside>
+        <div class="content">
+          <!-- <img alt="icon"  src="graphics/spotifyIcon.svg or any other icon file you want to use"> -->
+          <h4>vizzz</h4>
+          <p>text</p>
+        </div>
+      </aside>
+
+      <aside>
+        <div class="content">
+          <h4>pie chart</h4>
+          <p>text</p>
+        </div>
+      </aside>
+
+<!-- Make sure to update the credit to user + URL -->
+      <blockquote>
+        <p class="quote">quote</p>
+        <p class="credit"><strong>Dataset from: [url]</strong> <br><em> Kaggle user</em></p>
+      </blockquote>
+
+    </section>
+
+    <nav>
+      <!-- Feel free to delete this section. I've left it here in case I'd like to use it later on -->
+      <ul>
+        <li>
+          <a title="About" href="#">About</a>
+          <!-- Nested unordered list -->
+          <ul>
+            <li>
+              <a title="sublink 1" href="#">sublink1</a>
+            </li>
+            <li>
+              <a title="sublink2" href="#">sublink2</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a title="Project Plan" href="#">Project Plan</a>
+        </li>
+        <li>
+          <a title="Gantt Chart" href="#">Gantt Chart</a>
+        </li>
+        <li>
+          <a title="GitHub Repo" href="#">GitHub Repo</a>
+        </li>
+      </ul>
+    </nav>
+
+    <footer>
+
+      <!-- Copyright note, feel free to remove. -->
+      &copy; Top 50 Spotify Songs of 2019
+      <div class="content">
+        <a title="README.MD" href="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/README.md">README.MD</a>
+      </div>
+    </footer>
+
+  </div>
+
+
+
+     </body>
+</html>
