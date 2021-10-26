@@ -1,0 +1,79 @@
+/* CSS Document for Screens */
+/* Using web font from Google, using @import. Has to be first line of CSS code */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
+
+
+/* Everywhere else we specify the font using ems, ems is a proportinal measurement based on the based font, which is defined as 16px */
+/* This will allow devices to scale to their resolutions*/
+body { font-family: 'Roboto Mono', monospace; font-size: 16px; font-weight: 700; color: #555; margin: 0; padding: 0;}
+/* Margin properties go in this order: top, right, bottom, left */
+
+/* Making sure everything stays contained! Stops the page from scaling when it hits the max */
+#page { max-width: 1200px; margin: 0 auto; position: relative;}
+
+/* Text */
+
+/* 1em means (1 x base font), this helps with scaling resolutions for multiple devices  */
+h1 { margin: 0 0 1em 0; font-size: 2.8em; font-weight: 700; }
+/* 1.6em = 60% larger than the base font (base font = 16px) */
+h2 { margin: 0 0 .5em 0; font-size: 1.6em; font-weight: 700; line-height: 1.1em; }
+h3 { margin: 0 0 .5em 0; font-size: 1.3em; font-weight: 700; }
+h4 { margin: 0 0 1.5em 0; font-size: 1em; font-weight: 700; }
+
+p { margin: 0 0 1em 0; }
+
+a { color: #55a657; }
+a: visited {color: #65b1ff}
+
+
+a.btn { font-size: 1.2em; text-decoration: none; color: #384; border: 1px solid #384; padding: 4px 15px;
+  /* animated transition of .5 seconds */
+        transition: background-color .5s; }
+/* the .1 means it will be 10% transparent */
+a.btn:hover { background-color: rgba(0, 0, 0, .1); }
+
+/* Header */
+
+/* This code below probably won't be useful since we won't be using a banner image, I don't think. */
+/* header { height: 430px; background: #cf0004 url(../graphics/banner.jpg) no-repeat center bottom; position: relative;} */
+
+/* Targets line23 of index.html, make sure to set width & height to the SVG icon */
+header a.logo {
+  position:absolute;
+  display: block; width: 160px; height: 100px;
+  background: url(../graphics/spotifyIcon.svg) no-repeat 0 0; background-size: contain; */
+  top: 15px; left: 20px;
+}
+
+/* Targeting line 23 of index.html where we made a <span> link */
+/* This hides the HTML text that says "Top 50 Spotify Songs of 2019", ideally there should be an
+icon in place of it so when you hover the cursor over the image/logo it will show the text like that */
+header a.logo span { display: none;}
+
+/* Targeting line 24 of index.html */
+header div.hero { position: absolute; width: 42%; top: 130px; left: 55%; }
+header div.hero h1 { line-height: 1em; margin: 0 0 30px 0; color: #384; }
+
+
+/* Section - All */
+section { padding: 0 30px; }
+
+/* defining a sudo element */
+section::after { content:''; display: block; clear: both; }
+
+
+/* Section - Main */
+
+/* Targeting <section class="main"> of index.html */
+section.main { margin-top: 20px; margin-bottom: 30px; padding: 0; }
+section.main aside { width: 33% float: left; text-align: center; }
+
+section.main.content { margin: 15px; background: no-repeat center top; background-size: 75px 75px; padding-top: 85px; }
+
+section.main aside h3 a { color: #000; text-decoration: none; }
+section.main aside h3 a: hover { text-decoration: underline; }
+
+/* section.main aside .content.trending { background-image: url(...graphics/icon.svg); } */
+/* section.main aside .content.audio-features { background-image: url(...graphics/icon.svg); } */
+/* section.main aside .content.average-length { background-image: url(...graphics/icon.svg); } */
