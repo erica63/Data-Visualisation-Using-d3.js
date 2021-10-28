@@ -1,0 +1,55 @@
+/* CSS Document for Print */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
+@page {margin: .5cm;}
+
+body {
+  color: #000;
+  font-family: Georgia, "Times New Roman", Times, serif; font-size: 12pt;
+  font-weight: normal; margin: 0; padding: 0;
+}
+
+h1, h2, h3, h4 {margin: 0; font-family: "Roboto Mono", sans-serif;}
+
+h1 {font-size: 1.4em;}
+h2 {font-size: 1.3em;}
+h3 {font-size: 1.2em;}
+h4 {font-size: 1.1em;}
+
+p {margin: 0 0 1em 0; font-size: .9em;}
+
+a, a:visited {color: inherit; text-decoration: none;}
+/* Showing the link urls for printing */
+a::after, a:visited::after {
+  content: ' ('attr(href) ')';
+  font-style: italic;
+  word-wrap: break-word;
+}
+
+nav {display: none;}
+
+header {position: relative;}
+
+header a.logo {display: block; width: 145px; height: 60px; position: absolute; top: 20px; left: 20px;}
+header a.logo::before {content: url(../graphics/spotifyIcon.svg);}
+header a.logo::after {display: block; position: absolute; top: 20px; left: 175px;}
+header a.logo span {display: none;}
+
+header div.hero {width: 75%; position: absolute; top: 110px; left: 20px;}
+header div.hero a::after {display: block;}
+
+section {margin-bottom: 50px;}
+section::after {content:''; display: block; clear: both;}
+section.main {margin-top: 20px; margin-bottom: 30px;}
+section.main aside {width: 33%; float: left; text-align: center;}
+section.main aside div.content {margin:15px;}
+section.main aside div.content h3 a::after {display: block; font-family: serif; font-weight: normal;}
+
+footer {border-top: 1px solid #ccc; position: relative; min-height: 200px; padding: 20px 0 0 170px;}
+/* footer::after {content: url} */
+footer a {display: block; margin-top: 15px;}
+footer a::after {display: block;}
+footer div.content {padding-left: 20px;}
+footer div.content::after {
+  content:'This page was printed from https://erica63.github.io/Data-Visualisation-Using-d3.js/';
+  display: block; margin-top: 30px; font-style: italic; font-size: .9em;
+}

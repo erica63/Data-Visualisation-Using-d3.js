@@ -40,9 +40,10 @@ a.btn:hover { background-color: rgba(0, 0, 0, .1); }
 
 /* Targets line23 of index.html, make sure to set width & height to the SVG icon */
 header a.logo {
+  z-index: 1;
   position:absolute;
   display: block; width: 160px; height: 100px;
-  background: url(./graphics/spotifyIcon.svg) no-repeat 0 0; background-size: contain;
+  background: url(../graphics/spotifyIcon.svg) no-repeat 0 0; background-size: contain;
   top: 15px; left: 20px;
 }
 
@@ -59,12 +60,11 @@ header div.hero h1 { line-height: 1em; margin: 0 0 30px 0; color: #384; }
 /* Section - All */
 section { padding: 0 30px; }
 
-/* defining a sudo element */
+/* defining a pseudo-element */
 section::after { content:''; display: block; clear: both; }
 
 
 /* Section - Main */
-
 /* Targeting <section class="main"> of index.html */
 section.main { margin-top: 20px; margin-bottom: 30px; padding: 0; }
 section.main aside { width: 33% float: left; text-align: center; }
@@ -77,3 +77,69 @@ section.main aside h3 a: hover { text-decoration: underline; }
 /* section.main aside .content.trending { background-image: url(...graphics/icon.svg); } */
 /* section.main aside .content.audio-features { background-image: url(...graphics/icon.svg); } */
 /* section.main aside .content.average-length { background-image: url(...graphics/icon.svg); } */
+
+
+
+/* Section visualization */
+section.visualization { background-color: #B5D1A7; padding-top: 30px; padding-bottom: 30px; color: #fff}
+
+/* Targeting article within visualization section of index.html*/
+section.visualization article { padding: 0 20px 0 515px; background: url(../graphics/image.jpg) no-repeat 0 5px;
+    min.height: 220px; }
+
+/* Navigation
+nav {
+  background-color: rgba(0, 0, 0, .65);
+  position: absolute;
+  top: 0px; left: 0px;
+  padding: 50px 0 0 0;
+  width: 100%;
+}
+
+nav ul { list-style: none; margin 0; padding: 0; }
+
+nav ul li:hover { background-color: #2b0306; }
+
+nav ul li a {
+  display: inline-block;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  width: 125px;
+  position: relative;
+}
+
+nav ul li a:visited { color: #fff; }
+
+nav ul li a:hover { background-color: #6d0911; }
+*/
+
+
+/* Footer */
+footer { font-size: .8em; margin: 40px; color: #999; }
+footer .content { display: inline; }
+footer a { margin-left: 30px; color: #777; }
+footer a:visited { color: #777; }
+footer a:hover { color: #000; }
+
+
+/* Media Queries */
+@media screen and (max-width: 1000px; ) {
+  h1 { font-size: 2.4em; }
+
+  /* Header */
+  header div.hero { left: 56%; }
+  header div.hero h1 { margin-bottom: 20px;}
+
+  /* Section Viz */
+  section.visualization article { padding-left: 400px; background-size: 375px auto;}
+
+  /* Footer */
+  footer::after { content:''; display: block; clear: both;}
+  footer div.content a {
+    display: inline-block; margin: 0 0 10px 0;
+    float: left;
+    clear: both;
+  }
+
+}
