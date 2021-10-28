@@ -42,7 +42,7 @@ a.btn:hover { background-color: rgba(0, 0, 0, .1); }
 header a.logo {
   position:absolute;
   display: block; width: 160px; height: 100px;
-  background: url(../graphics/spotifyIcon.svg) no-repeat 0 0; background-size: contain; */
+  background: url(./graphics/spotifyIcon.svg) no-repeat 0 0; background-size: contain;
   top: 15px; left: 20px;
 }
 
