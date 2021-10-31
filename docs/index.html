@@ -3,9 +3,10 @@
    <head>
      <meta http-equiv="content-type" content="text/html"; charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
-     <title>Top 50 Spotify Songs of 2019</title>
+     <meta name ="author" content="Erica Thuet">
+     <title>Top 50 Spotify Songs of 2019 - Data Visualization Using D3.JS</title>
      <!-- Hooking the CSS file into the HTML -->
-     <!-- <link rel="stylesheet" type="text/css" media="screen" href="screen.css"> -->
+      <link rel="stylesheet" type="text/css" media="screen" href="screen.css">
      <!-- <link rel="stylesheet" type="text/css" media="print" href="print.css"> -->
   </head>
 
@@ -22,8 +23,48 @@
       <!-- Creating a hyperlink redirecting back to the website -->
       <a class="logo" title="Top 50 Spotify Songs of 2019" href="https://erica63.github.io/Data-Visualisation-Using-d3.js/"><span>Top 50 Spotify Songs of 2019</span></a>
       <!-- <img src= "../graphics/spotifyIcon.svg" alt="Spotify"> -->
-      <div class="hero">
-        <h1>Top Artists</h1>
+      <!-- Adding the artists in alphabetical order -->
+      <img id="AliGatie" src ="../graphics/AliGatie.jpg"/>
+      <img id="AnuelAA" src="../graphics/AnuelAA.jpg"/>
+      <img  id="ArianaGrande" src="../graphics/ArianaGrande.jpg"/>
+      <img  id="BadBunny" src="../graphics/BadBunny.jpg"/>
+      <img  id="BillieElish" src="../graphics/BillieElish.png"/>
+      <img  id="ChrisBrown" src="../graphics/ChrisBrown.png"/>
+      <img  id="DaddyYankee" src="../graphics/DaddyYankee.jpg"/>
+      <img  id="DJSnake" src="../graphics/DJSnake.jpg"/>
+      <img  id="Drake" src="../graphics/Drake.jpg"/>
+      <img  id="EdSheeran" src="../graphics/EdSheeran.png"/>
+      <img  id="JBalvin" src="../graphics/JBalvin.jpg"/>
+      <img  id="JhayCortez" src="../graphics/JhayCortez.jpg"/>
+      <img  id="JonasBrothers" src="../graphics/JonasBrothers.jpg"/>
+      <img  id="KatyPerry" src="../graphics/KatyPerry.png"/>
+      <img  id="Khalid" src="../graphics/Khalid.jpg"/>
+      <img  id="Kygo" src="../graphics/Kygo.jpg"/>
+      <img  id="LadyGaga" src="../graphics/LadyGaga.jpg"/>
+      <img  id="Lauv" src="../graphics/Lauv.jpg"/>
+      <img  id="LewisCapaldi" src="../graphics/LewisCapaldi.jpg"/>
+      <img  id="LilNasX" src="../graphics/LilNasX.jpg"/>
+      <img  id="LilTecca" src="../graphics/LilTecca.jpg"/>
+      <img  id="Lizzo" src="../graphics/Lizzo.jpg"/>
+      <img  id="Lunay" src="../graphics/Lunay.jpg"/>
+      <img  id="Maluma" src="../graphics/Maluma.jpg"/>
+      <img  id="Marshmello" src="../graphics/Marshmello.jpg"/>
+      <img  id="MartinGarrix" src="../graphics/MartinGarrix.jpg"/>
+      <img  id="MEDUZA" src="../graphics/MEDUZA.jpg"/>
+      <img  id="NickyJam" src="../graphics/NickyJam.jpg"/>
+      <img  id="PostMalone" src="../graphics/PostMalone.jpg"/>
+      <img  id="Rosalia" src="../graphics/Rosalia.jpg"/>
+      <img  id="SamSmith" src="../graphics/SamSmith.jpeg"/>
+      <img  id="Sech" src="../graphics/Sech.jpg"/>
+      <img  id="ShawnMendes" src="../graphics/ShawnMendes.png"/>
+      <img  id="TaylorSwift" src="../graphics/TaylorSwift.jpeg"/>
+      <img  id="TheChainsmokers" src="../graphics/TheChainsmokers.jpg"/>
+      <img  id="TonesAndI" src="../graphics/TonesAndI.jpg"/>
+      <img  id="Y2K" src="../graphics/Y2K.jpg"/>
+      <img  id="YoungThug" src="../graphics/YoungThug.jpg"/>
+
+      <div class="main">
+        <h1 id="mainh1">Top 50 Spotify Songs of 2019</h1>
         <!-- May remove this hyperlink once I decide if I want the website to be one entire page
         you can scroll through or to have multiple pages with different vizs or both -->
         <a class="btn" title="See here" href="#">See here</a>
@@ -31,17 +72,18 @@
       </div>
     </header>
 
+
+
 <!-- Creating unique class for each section in order to differentiate between them -->
-<!-- Have to come back and readjust the HTML once I start creating the visualizations -->
-    <section class="main">
+    <section class="header">
 
       <aside>
-        <div class="content trending">
-          <h3><a href="#">What&apos;s trending</a></h3>
+        <div class="artists">
+        <!--  <h3><a href="#">What&apos;s trending</a></h3> -->
           <p>text</p>
         </div>
       </aside>
-
+<!--
       <aside>
         <div class="content audio-features">
           <h3><a href="#">Audio features</a></h3>
@@ -54,11 +96,11 @@
           <h3><a href="#">Average length</a></h3>
           <p>text</p>
         </div>
-      </aside>
+      </aside> -->
 
     </section>
 
-    <section class="visualization">
+    <section class="graphics">
       <article>
         <h2>viz</h2>
         <p>text</p>
