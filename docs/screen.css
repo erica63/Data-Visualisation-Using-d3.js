@@ -47,6 +47,67 @@ header a.logo {
   top: 15px; left: 20px;
 }
 
+img { transition: all .2s ease-in-out; }
+img:hover {
+   z-index: 1;
+   transform: scale(1.2);
+}
+
+/* Trying to create an outline on the title header */
+
+/* .mainh1 { color: #fff; text-shadow: #000 0px 0px 1px;} */
+
+/* .thumbnail:hover {
+  position:relative;
+  top: -25px;
+  left: -35px;
+  width: 50px;
+  height: auto;
+  display: block;
+} */
+
+/* Artists in alphabetical order */
+/* Is there a more elegant way to do this? Should I adjust the res within index.html? */
+#AliGatie {position: relative; float:left; width:100px; height:100px;}
+#AnuelAA {position: relative; float:left; width:100px ;height:100px;}
+#ArianaGrande {position: relative; float:left; width:100px; height:100px;}
+#BadBunny {position: relative; float:left; width:100px; height:100px;}
+#BillieElish {position: relative; float:left; width:100px; height:100px;}
+#ChrisBrown {position: relative; float:left; width:100px; height:100px;}
+#DaddyYankee {position: relative; float:left; width:100px; height:100px;}
+#DJSnake {position: relative; float:left; width:100px; height:100px;}
+#Drake {position: relative; float:left; width:100px; height:100px;}
+#EdSheeran {position: relative; float:left; width:100px; height:100px;}
+#JBalvin {position: relative; float:left; width:100px; height:100px;}
+#JhayCortez {position: relative; float:left; width:100px; height:100px;}
+#JonasBrothers {position: relative; float:left; width:100px; height:100px;}
+#KatyPerry {position: relative; float:left; width:100px; height:100px;}
+#Khalid {position: relative; float:left; width:100px; height:100px;}
+#Kygo {position: relative; float:left; width:100px; height:100px;}
+#LadyGaga {position: relative; float:left; width:100px; height:100px;}
+#Lauv {position: relative; float:left; width:100px; height:100px;}
+#LewisCapaldi {position: relative; float:left; width:100px; height:100px;}
+#LilNasX {position: relative; float:left; width:100px; height:100px;}
+#LilTecca {position: relative; float:left; width:100px; height:100px;}
+#Lizzo {position: relative; float:left; width:100px; height:100px;}
+#Lunay {position: relative; float:left; width:100px; height:100px;}
+#Maluma {position: relative; float:left; width:100px; height:100px;}
+#Marshmello {position: relative; float:left; width:100px; height:100px;}
+#MartinGarrix {position: relative; float:left; width:100px; height:100px;}
+#MEDUZA {position: relative; float:left; width:100px; height:100px;}
+#NickyJam {position: relative; float:left; width:100px; height:100px;}
+#PostMalone {position: relative; float:left; width:100px; height:100px;}
+#Rosalia {position: relative; float:left; width:100px; height:100px;}
+#SamSmith {position: relative; float:left; width:100px; height:100px;}
+#Sech {position: relative; float:left; width:100px; height:100px;}
+#ShawnMendes {position: relative; float:left; width:100px; height:100px;}
+#TaylorSwift {position: relative; float:left; width:100px; height:100px;}
+#TheChainsmokers {position: relative; float:left; width:100px; height:100px;}
+#TonesAndI {position: relative; float:left; width:100px; height:100px;}
+#Y2K {position: relative; float:left; width:100px; height:100px;}
+#YoungThug {position: relative; float:left; width:100px; height:100px;}
+
+
 /* Targeting line 23 of index.html where we made a <span> link */
 /* This hides the HTML text that says "Top 50 Spotify Songs of 2019", ideally there should be an
 icon in place of it so when you hover the cursor over the image/logo it will show the text like that */
@@ -55,6 +116,14 @@ header a.logo span { display: none;}
 /* Targeting line 24 of index.html */
 header div.hero { position: absolute; width: 42%; top: 130px; left: 55%; }
 header div.hero h1 { line-height: 1em; margin: 0 0 30px 0; color: #384; }
+
+
+
+
+body { background-image: linear-gradient(to bottom right, black, grey);}
+
+
+
 
 
 /* Section - All */
