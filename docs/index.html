@@ -7,23 +7,37 @@
      <title>Top 50 Spotify Songs of 2019 - Data Visualization Using D3.JS</title>
      <!-- Hooking the CSS file into the HTML -->
       <link rel="stylesheet" type="text/css" media="screen" href="screen.css">
+     <!-- For printing the page -->
      <!-- <link rel="stylesheet" type="text/css" media="print" href="print.css"> -->
+     <!-- I've created the file d3.v7.js which contains the whole v7.1.1 d3.js library. The following code sources the file -->
+    <script src="d3.v7.js"></script>
   </head>
 
-   <!-- I've created the file d3.v7.js which contains the whole v7.1.1 d3.js
-   library. The following code sources the file -->
-<script src="d3.v7.js"></script>
 
-<!-- This is where the d3.js code will be written -->
-<script src="app.js"></script>
+
+
+
+
 
 <body>
+
   <div id="page">
     <header>
-      <!-- Creating a hyperlink redirecting back to the website -->
-      <a class="logo" title="Top 50 Spotify Songs of 2019" href="https://erica63.github.io/Data-Visualisation-Using-d3.js/"><span>Top 50 Spotify Songs of 2019</span></a>
-      <!-- <img src= "../graphics/spotifyIcon.svg" alt="Spotify"> -->
-      <!-- Adding the artists in alphabetical order -->
+      <!-- Maybe rename to wrapping/wrapper -->
+      <div class="wrap">
+        <div class="navbar">
+          <!-- Redirecting back to website -->
+          <a href=https://erica63.github.io/Data-Visualisation-Using-d3.js>
+          <img src= "../graphics/spotifyIcon.svg" alt="Spotify" class="logo">
+          </a>
+          <h1>Top 50 Spotify Songs of 2019</h1>
+        </div>
+      </div>
+    </header>
+  </div>
+
+      <!-- Artists photos in alphabetical order -->
+      <!--
       <img id="AliGatie" src ="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/AliGatie.jpg?raw=true"/>
       <img id="AnuelAA" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/AnuelAA.jpg?raw=true"/>
       <img  id="ArianaGrande" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/ArianaGrande.jpg?raw=true"/>
@@ -62,116 +76,74 @@
       <img  id="TonesAndI" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/TonesAndI.jpg?raw=true"/>
       <img  id="Y2K" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/Y2K.jpg?raw=true"/>
       <img  id="YoungThug" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/YoungThug.jpg?raw=true"/>
+-->
+
 
       <div class="main">
-        <h1 id="mainh1">Top 50 Spotify Songs of 2019</h1>
-        <!-- May remove this hyperlink once I decide if I want the website to be one entire page
-        you can scroll through or to have multiple pages with different vizs or both -->
-        <a class="btn" title="See here" href="#">See here</a>
-
+        <div class="wrap">
+          <div class="sidebar">
+            <img id="AliGatie" src ="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/AliGatie.jpg?raw=true"/>
+            <img id="AnuelAA" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/AnuelAA.jpg?raw=true"/>
+            <img  id="ArianaGrande" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/ArianaGrande.jpg?raw=true"/>
+            <img  id="BadBunny" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/BadBunny.jpg?raw=true"/>
+            <img  id="BillieElish" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/BillieElish.png?raw=true"/>
+            <img  id="ChrisBrown" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/ChrisBrown.png?raw=true"/>
+            <img  id="DaddyYankee" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/DaddyYankee.jpg?raw=true"/>
+            <img  id="DJSnake" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/DJSnake.jpg?raw=true"/>
+            <img  id="Drake" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/Drake.jpg?raw=true"/>
+            <img  id="EdSheeran" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/EdSheeran.png?raw=true"/>
+            <img  id="JBalvin" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/JBalvin.jpg?raw=true"/>
+            <img  id="JhayCortez" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/JhayCortez.jpg?raw=true"/>
+            <img  id="JonasBrothers" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/JonasBrothers.jpg?raw=true"/>
+            <img  id="KatyPerry" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/KatyPerry.png?raw=true"/>
+            <img  id="Khalid" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/Khalid.jpg?raw=true"/>
+            <img  id="Kygo" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/Kygo.jpg?raw=true"/>
+            <img  id="LadyGaga" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/LadyGaga.jpg?raw=true"/>
+            <img  id="Lauv" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/Lauv.jpg?raw=true"/>
+            <img  id="LewisCapaldi" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/LewisCapaldi.jpg?raw=true"/>
+            <img  id="LilNasX" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/LilNasX.jpg?raw=true"/>
+            <img  id="LilTecca" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/LilTecca.jpg?raw=true"/>
+            <img  id="Lizzo" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/Lizzo.jpg?raw=true"/>
+            <img  id="Lunay" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/Lunay.jpg?raw=true"/>
+            <img  id="Maluma" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/Maluma.jpg?raw=true"/>
+            <img  id="Marshmello" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/Marshmello.jpg?raw=true"/>
+            <img  id="MartinGarrix" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/MartinGarrix.jpg?raw=true"/>
+            <img  id="MEDUZA" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/MEDUZA.jpg?raw=true"/>
+            <img  id="NickyJam" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/NickyJam.jpg?raw=true"/>
+            <img  id="PostMalone" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/PostMalone.jpg?raw=true"/>
+            <img  id="Rosalia" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/Rosalia.jpg?raw=true"/>
+            <img  id="SamSmith" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/SamSmith.jpeg?raw=true"/>
+            <img  id="Sech" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/Sech.jpg?raw=true"/>
+            <img  id="ShawnMendes" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/ShawnMendes.png?raw=true"/>
+            <img  id="TaylorSwift" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/TaylorSwift.jpeg?raw=true"/>
+            <img  id="TheChainsmokers" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/TheChainsmokers.jpg?raw=true"/>
+            <img  id="TonesAndI" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/TonesAndI.jpg?raw=true"/>
+            <img  id="Y2K" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/Y2K.jpg?raw=true"/>
+            <img  id="YoungThug" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/YoungThug.jpg?raw=true"/>
+          </div>
+          <div id="chart">
+            <h2>Highest popularity rating</h2>
+            <!-- Including the visualization -->
+            <script src="chart.js"></script>
+          </div>
+          <div id="bubblechart">
+            <h2>Danceability</h2>
+          </div>
       </div>
-    </header>
+    </div>
 
 
-
-<!-- Creating unique class for each section in order to differentiate between them -->
-    <section class="header">
-
-      <aside>
-        <div class="artists">
-        <!--  <h3><a href="#">What&apos;s trending</a></h3> -->
-          <p>text</p>
-        </div>
-      </aside>
-<!--
-      <aside>
-        <div class="content audio-features">
-          <h3><a href="#">Audio features</a></h3>
-          <p>text</p>
-        </div>
-      </aside>
-
-      <aside>
-        <div class="content average-length">
-          <h3><a href="#">Average length</a></h3>
-          <p>text</p>
-        </div>
-      </aside> -->
-
-    </section>
-
-    <section class="graphics">
-      <article>
-        <h2>viz</h2>
-        <p>text</p>
-        <a class="btn" title="viz" href="#">Learn More</a>
-      </article>
-
-    </section>
-
-    <section class="how-to">
-      <aside>
-        <div class="content">
-          <!-- <img alt="icon"  src="graphics/spotifyIcon.svg or any other icon file you want to use"> -->
-          <h4>vizzz</h4>
-          <p>text</p>
-        </div>
-      </aside>
-
-      <aside>
-        <div class="content">
-          <h4>pie chart</h4>
-          <p>text</p>
-        </div>
-      </aside>
-
-<!-- Make sure to update the credit to user + URL -->
-      <blockquote>
-        <p class="quote">quote</p>
-        <p class="credit"><strong>Dataset from: [url]</strong> <br><em> Kaggle user</em></p>
-      </blockquote>
-
-    </section>
-
-    <nav>
-      <!-- Feel free to delete this section. I've left it here in case I'd like to use it later on -->
-      <ul>
-        <li>
-          <a title="About" href="#">About</a>
-          <!-- Nested unordered list -->
-          <ul>
-            <li>
-              <a title="sublink 1" href="#">sublink1</a>
-            </li>
-            <li>
-              <a title="sublink2" href="#">sublink2</a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a title="Project Plan" href="#">Project Plan</a>
-        </li>
-        <li>
-          <a title="Gantt Chart" href="#">Gantt Chart</a>
-        </li>
-        <li>
-          <a title="GitHub Repo" href="#">GitHub Repo</a>
-        </li>
-      </ul>
-    </nav>
-
+<!-- Make sure to have a section with the credit to user + URL of dataset, maybe use blockquote-->
     <footer>
-
-      <!-- Copyright note, feel free to remove. -->
-      &copy; Top 50 Spotify Songs of 2019
-      <div class="content">
+      <div class="wrap">
+        <!-- Copyright note, feel free to remove. -->
+        &copy; Top 50 Spotify Songs of 2019
         <a title="README.MD" href="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/README.md">README.MD</a>
+        <!-- Redirecting to repo -->
+        <a title="GitHub Repository" href=https://github.com/erica63/Data-Visualisation-Using-d3.js>
+        <img src= "../graphics/gitHubIconPurpleGradient.svg" alt="GitHub" class="repo">
+        </a>
       </div>
     </footer>
-
-  </div>
-
-
-
-     </body>
+</body>
 </html>

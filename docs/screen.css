@@ -6,20 +6,60 @@
 
 /* Everywhere else we specify the font using ems, ems is a proportinal measurement based on the based font, which is defined as 16px */
 /* This will allow devices to scale to their resolutions*/
-body { font-family: 'Roboto Mono', monospace; font-size: 16px; font-weight: 700; color: #555; margin: 0; padding: 0;}
-/* Margin properties go in this order: top, right, bottom, left */
+body {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 16px;
+  font-weight: 700;
+
+  background-image: linear-gradient(to bottom right, black, grey);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 
 /* Making sure everything stays contained! Stops the page from scaling when it hits the max */
-#page { max-width: 1200px; margin: 0 auto; position: relative;}
+#page {max-width: 1500px; margin: 0 auto; position: relative; top: 50px}
+#page h1 {font-size: 65px; position: relative}
+#chart {z-index: 1; width: 500px; height: 500px; margin: 1px; text-align: center; display: inline-block; margin-left: 60px; margin-top: 30px;}
+#chart h2 {color: #1DB954; position: absolute; left: 400px; margin-top: -50px;}
 
-/* Text */
+#bubblechart h2 {position: absolute; right: 100px; margin-bottom: 100px;}
+.rectangle:hover {
+  opacity: 0.66;
+}
+
+
+/* Header navbar*/
+
+.navbar {width: 100%; height: 15vh; margin: auto; display: flex; align-items: center;}
+.navbar h1 {color: #1DB954; padding-left: 10px; padding-right: 100px;}
+
+.logo {width:300px; cursor: pointer; position: absolute; margin-left: -340px; margin-top: -130px;}
+.repo {width: 30px; cursor: pointer; position: relative; }
+
+.sidebar {
+  width: 280px;
+  border: 2px;
+  padding: 50px;
+}
+
+.content {flex:1;}
+
+.footer {height: 50px;}
+
+
+
 
 /* 1em means (1 x base font), this helps with scaling resolutions for multiple devices  */
-h1 { margin: 0 0 1em 0; font-size: 2.8em; font-weight: 700; }
+h1 { margin: 0 0 1em 0; font-size: 2.8em; font-weight: 700; color: #1DB954;}
 /* 1.6em = 60% larger than the base font (base font = 16px) */
-h2 { margin: 0 0 .5em 0; font-size: 1.6em; font-weight: 700; line-height: 1.1em; }
-h3 { margin: 0 0 .5em 0; font-size: 1.3em; font-weight: 700; }
-h4 { margin: 0 0 1.5em 0; font-size: 1em; font-weight: 700; }
+h2 { margin: 0 0 .5em 0; font-size: 1.6em; font-weight: 700; line-height: 1.1em; color: #1DB954;}
+h3 { margin: 0 0 .5em 0; font-size: 1.3em; font-weight: 700; color: #1DB954;}
+h4 { margin: 0 0 1.5em 0; font-size: 1em; font-weight: 700; color: #1DB954;}
 
 p { margin: 0 0 1em 0; }
 
@@ -33,19 +73,7 @@ a.btn { font-size: 1.2em; text-decoration: none; color: #384; border: 1px solid 
 /* the .1 means it will be 10% transparent */
 a.btn:hover { background-color: rgba(0, 0, 0, .1); }
 
-/* Header */
 
-/* This code below probably won't be useful since we won't be using a banner image, I don't think. */
-/* header { height: 430px; background: #cf0004 url(../graphics/banner.jpg) no-repeat center bottom; position: relative;} */
-
-/* Targets line23 of index.html, make sure to set width & height to the SVG icon */
-header a.logo {
-  z-index: 1;
-  position:absolute;
-  display: block; width: 160px; height: 100px;
-  background: url(../graphics/spotifyIcon.svg) no-repeat 0 0; background-size: contain;
-  top: 15px; left: 20px;
-}
 
 img { transition: all .2s ease-in-out; }
 img:hover {
@@ -111,16 +139,8 @@ img:hover {
 /* Targeting line 23 of index.html where we made a <span> link */
 /* This hides the HTML text that says "Top 50 Spotify Songs of 2019", ideally there should be an
 icon in place of it so when you hover the cursor over the image/logo it will show the text like that */
-header a.logo span { display: none;}
+/* header a.logo span { display: none;} */
 
-/* Targeting line 24 of index.html */
-header div.hero { position: absolute; width: 42%; top: 130px; left: 55%; }
-header div.hero h1 { line-height: 1em; margin: 0 0 30px 0; color: #384; }
-
-
-
-
-body { background-image: linear-gradient(to bottom right, black, grey);}
 
 
 
@@ -156,32 +176,6 @@ section.visualization { background-color: #B5D1A7; padding-top: 30px; padding-bo
 section.visualization article { padding: 0 20px 0 515px; background: url(../graphics/image.jpg) no-repeat 0 5px;
     min.height: 220px; }
 
-/* Navigation
-nav {
-  background-color: rgba(0, 0, 0, .65);
-  position: absolute;
-  top: 0px; left: 0px;
-  padding: 50px 0 0 0;
-  width: 100%;
-}
-
-nav ul { list-style: none; margin 0; padding: 0; }
-
-nav ul li:hover { background-color: #2b0306; }
-
-nav ul li a {
-  display: inline-block;
-  color: #fff;
-  padding: 10px 20px;
-  text-decoration: none;
-  width: 125px;
-  position: relative;
-}
-
-nav ul li a:visited { color: #fff; }
-
-nav ul li a:hover { background-color: #6d0911; }
-*/
 
 
 /* Footer */
@@ -197,8 +191,7 @@ footer a:hover { color: #000; }
   h1 { font-size: 2.4em; }
 
   /* Header */
-  header div.hero { left: 56%; }
-  header div.hero h1 { margin-bottom: 20px;}
+
 
   /* Section Viz */
   section.visualization article { padding-left: 400px; background-size: 375px auto;}
