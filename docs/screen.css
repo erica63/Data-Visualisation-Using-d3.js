@@ -1,17 +1,19 @@
 /* CSS Document for Screens */
-/* Using web font from Google, using @import. Has to be first line of CSS code */
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
-
+/* Using web font from Google, using @import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Mono:wght@700&display=swap');
 
 /* Everywhere else we specify the font using ems, ems is a proportinal measurement based on the based font, which is defined as 16px */
 /* This will allow devices to scale to their resolutions*/
 body {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  font-size: 1.1rem;
   font-weight: 700;
 
-  background-image: linear-gradient(to bottom right, black, grey);
+  /* black gradient */
+  background-image: linear-gradient(black, #404040);
+  /* green gradient */
+  /* background:linear-gradient(120deg, #1db954, #191414); */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -21,9 +23,234 @@ body {
   background-attachment: fixed;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  transition: all .3s ease-in-out;
+}
+
+img:hover {
+   z-index: 1;
+   transform: scale(1.2);
+}
+
+.split img {
+  border-radius: 50%;
+  height: 125px;
+  width: 125px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+section {
+  padding: 7em 0;
+}
+
+.container-hero {
+  width: 85%;
+  max-width: 75em;
+  margin: 0 auto;
+}
+
+
+.container {
+  width: 85%;
+  max-width: 65em;
+  margin: 0 0 0 55vh;
+}
+
+.split {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+  margin-right: -50px;
+  justify-content: right;
+  }
+
+
+
+
+
+
+/* Any element that has a sibling before it will get spaced out
+.spacing > * + * {
+  margin-top: var(--spacer, 2rem)
+} */
+
+/* May have to come back to this and specify that it is for the song buttons. It might clash with info button below */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 200;
+  font-size: 1.125rem;
+  padding: .5em 1.25em;
+  background: green;
+  color: white;
+  border-radius: .7em;
+  transition: all .3s ease-in-out;
+  opacity: .3s linear;
+}
+
+.btn:hover,
+.btn:focus {
+transform: scale (1.05);
+opacity: .95;
+}
+
+
+/* Hero */
+.primary-title {
+  /* white-space: nowrap; */
+  font-size: 4rem;
+  font-size: clamp(6rem, calc(5vw + 1rem), 4.5rem);
+  line-height: 1.1;
+  text-transform: uppercase;
+  text-align: center;
+  display: grid;
+}
+
+.hero {
+  color: white;
+  padding: 15em 0; 
+  background-image: url(https://raw.githubusercontent.com/erica63/Data-Visualisation-Using-d3.js/7eefbeabbaf73226cce1f0e29e5bb2f04174607e/graphics/spotifyIcon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+}
+
+
+/* Main */
+.section-title {
+  /* font-size: clamp(1.5rem, calc(3vw + .5rem), 2rem)*/
+  line-height: 1;
+  color: white;
+}
+
+/* Main Songs */
+.songs {
+  float: left;
+  margin-left: -38%;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+ul li {
+  box-sizing: border-box;
+  width: 27em;
+  height: 2.3em;
+  font-size: .8rem;
+  border-radius: .5em;
+  margin: 1.5em;
+  color: white;
+  line-height: 2.5em;
+  box-shadow: 0 0 .5em
+  rgba(0, 0, 0, 1);
+  transition: all 350ms ease-in-out;
+  white-space: nowrap;
+}
+
+
+/* linear gradients I like
+background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+background:linear-gradient(120deg, #1db954, #191414);
+background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%); */
+/* Might entirely remove perspective */
+/*
+ul li:nth-child(odd) {
+  background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+  text-align: left;
+  padding-left: 1%;
+  transform: perspective(1000px)
+  rotateY(-45deg);
+}
+
+ul li:nth-child(even) {
+  background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+  text-align: left;
+  padding-left: 1%;
+  transform: perspective(1000px)
+  rotateY(45deg);
+}
+
+ul li:nth-child(odd):hover {
+  transform: perspective(1000px)
+  rotateY(45deg);
+  padding-left: 5%;
+}
+
+ul li:nth-child(even):hover {
+  transform: perspective(1000px)
+  rotateY(-45deg);
+  padding-left: 5%;
+} */
+
+/* Without perspective */
+ul li:nth-child(odd) {
+  background-image: linear-gradient(to top, #1db954 0%, #38e073 100%);
+  text-align: left;
+  padding-left: 3%;
+}
+
+ul li:nth-child(even) {
+  background-image: linear-gradient(to top, #1db954 0%, #38e073 100%);
+  text-align: left;
+  padding-left: 3%;
+}
+
+ul li:nth-child(odd):hover {
+  transform: scale(1.1);
+  padding-left: 5%;
+}
+
+ul li:nth-child(even):hover {
+  transform: scale(1.1);
+  padding-left: 5%;
+}
+
+/* Main Artists*/
+
+
+span {
+  line-height: 1.2;
+  color: white;
+  display: block;
+  font-weight: 200;
+  font-size: 1.1rem;
+  text-align: left;
+}
+
+
+/* Details about the artist's song shows up to the right of their image */
+/* Need to separate one from another, so only the specific one the user hovers over shows up*/
+.details {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .2s, visibility .2s;
+}
+
+.split:hover .details {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+
+
+
 /* Making sure everything stays contained! Stops the page from scaling when it hits the max */
-#page {max-width: 1500px; margin: 0 auto; position: relative; top: 50px}
-#page h1 {font-size: 65px; position: relative}
 #chart {z-index: 1; width: 500px; height: 500px; margin: 1px; text-align: center; display: inline-block; margin-left: 60px; margin-top: 30px;}
 #chart h2 {color: #1DB954; position: absolute; left: 400px; margin-top: -50px;}
 
@@ -32,6 +259,33 @@ body {
   opacity: 0.66;
 }
 
+/* Info button */
+.extra-info {
+  display: none;
+  line-height: 30px;
+  font-size: 12px;
+  position: absolute;
+  top: 0;
+  left: 50px;
+}
+
+.info:hover .extra-info {
+  display: block;
+}
+
+.info {
+  font-size: 20px;
+  padding-left: 5px;
+  width: 20px;
+  border-radius: 15px;
+}
+
+.info:hover {
+  background-color: white;
+  padding: 0 0 0 5px;
+  width: 315px;
+  text-align: left !important;
+}
 
 /* Header navbar*/
 
@@ -55,14 +309,15 @@ body {
 
 
 /* 1em means (1 x base font), this helps with scaling resolutions for multiple devices  */
-h1 { margin: 0 0 1em 0; font-size: 2.8em; font-weight: 700; color: #1DB954;}
+/* h1 { margin: 0 0 1em 0; font-size: 2.8em; font-weight: 700; color: #1DB954;} */
 /* 1.6em = 60% larger than the base font (base font = 16px) */
-h2 { margin: 0 0 .5em 0; font-size: 1.6em; font-weight: 700; line-height: 1.1em; color: #1DB954;}
+/* h2 { margin: 0 0 .5em 0; font-size: 1.6em; font-weight: 700; line-height: 1.1em; color: #1DB954;}
 h3 { margin: 0 0 .5em 0; font-size: 1.3em; font-weight: 700; color: #1DB954;}
 h4 { margin: 0 0 1.5em 0; font-size: 1em; font-weight: 700; color: #1DB954;}
 
-p { margin: 0 0 1em 0; }
+p { margin: 0 0 1em 0; } */
 
+/* Add this for readme.md again */
 a { color: #55a657; }
 a: visited {color: #65b1ff}
 
@@ -75,27 +330,11 @@ a.btn:hover { background-color: rgba(0, 0, 0, .1); }
 
 
 
-img { transition: all .2s ease-in-out; }
-img:hover {
-   z-index: 1;
-   transform: scale(1.2);
-}
 
-/* Trying to create an outline on the title header */
-
-/* .mainh1 { color: #fff; text-shadow: #000 0px 0px 1px;} */
-
-/* .thumbnail:hover {
-  position:relative;
-  top: -25px;
-  left: -35px;
-  width: 50px;
-  height: auto;
-  display: block;
-} */
 
 /* Artists in alphabetical order */
 /* Is there a more elegant way to do this? Should I adjust the res within index.html? */
+/*
 #AliGatie {position: relative; float:left; width:100px; height:100px;}
 #AnuelAA {position: relative; float:left; width:100px ;height:100px;}
 #ArianaGrande {position: relative; float:left; width:100px; height:100px;}
@@ -133,68 +372,26 @@ img:hover {
 #TheChainsmokers {position: relative; float:left; width:100px; height:100px;}
 #TonesAndI {position: relative; float:left; width:100px; height:100px;}
 #Y2K {position: relative; float:left; width:100px; height:100px;}
-#YoungThug {position: relative; float:left; width:100px; height:100px;}
+#YoungThug {position: relative; float:left; width:100px; height:100px;} */
 
-
-/* Targeting line 23 of index.html where we made a <span> link */
-/* This hides the HTML text that says "Top 50 Spotify Songs of 2019", ideally there should be an
-icon in place of it so when you hover the cursor over the image/logo it will show the text like that */
-/* header a.logo span { display: none;} */
-
-
-
-
-
-
-/* Section - All */
-section { padding: 0 30px; }
 
 /* defining a pseudo-element */
 section::after { content:''; display: block; clear: both; }
 
-
-/* Section - Main */
-/* Targeting <section class="main"> of index.html */
-section.main { margin-top: 20px; margin-bottom: 30px; padding: 0; }
-section.main aside { width: 33% float: left; text-align: center; }
-
-section.main.content { margin: 15px; background: no-repeat center top; background-size: 75px 75px; padding-top: 85px; }
-
-section.main aside h3 a { color: #000; text-decoration: none; }
-section.main aside h3 a: hover { text-decoration: underline; }
-
-/* section.main aside .content.trending { background-image: url(...graphics/icon.svg); } */
-/* section.main aside .content.audio-features { background-image: url(...graphics/icon.svg); } */
-/* section.main aside .content.average-length { background-image: url(...graphics/icon.svg); } */
-
-
-
-/* Section visualization */
-section.visualization { background-color: #B5D1A7; padding-top: 30px; padding-bottom: 30px; color: #fff}
-
-/* Targeting article within visualization section of index.html*/
-section.visualization article { padding: 0 20px 0 515px; background: url(../graphics/image.jpg) no-repeat 0 5px;
-    min.height: 220px; }
-
-
-
-/* Footer */
-footer { font-size: .8em; margin: 40px; color: #999; }
-footer .content { display: inline; }
-footer a { margin-left: 30px; color: #777; }
-footer a:visited { color: #777; }
-footer a:hover { color: #000; }
 
 
 /* Media Queries */
 @media screen and (max-width: 1000px; ) {
   h1 { font-size: 2.4em; }
 
-  /* Header */
 
 
-  /* Section Viz */
-  section.visualization article { padding-left: 400px; background-size: 375px auto;}
+  /* Footer */
+  footer { font-size: .8em; margin: 40px; color: #999; }
+  footer .content { display: inline; }
+  footer a { margin-left: 30px; color: #777; }
+  footer a:visited { color: #777; }
+  footer a:hover { color: #000; }
 
   /* Footer */
   footer::after { content:''; display: block; clear: both;}
