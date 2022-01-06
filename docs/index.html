@@ -1,423 +1,559 @@
  <!DOCTYPE html>
  <html lang="en">
    <head>
+     <title>Top 50 Spotify Songs of 2019 - Data Visualization Using D3.JS</title>
      <meta http-equiv="content-type" content="text/html"; charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
      <meta name ="author" content="Erica Thuet">
-     <title>Top 50 Spotify Songs of 2019 - Data Visualization Using D3.JS</title>
      <link href="https://fonts.google.com/specimen/Poppins?query=poppins">
+
      <!-- Hooking the CSS file into the HTML -->
      <link rel="stylesheet" type="text/css" media="screen" href="screen.css">
+
      <!-- For printing the page -->
      <!-- <link rel="stylesheet" type="text/css" media="print" href="print.css"> -->
+
      <!-- I've created the file d3.v7.js which contains the whole v7.1.1 d3.js library. The following code sources the file -->
     <script src="d3.v7.js"></script>
+    <script src="script.js"></script>
   </head>
 
 
 <body>
 
-    <header class ="hero">
-      <div class="container-hero">
+  <!-- Header -->
+    <header id = "header">
+      <h1><a href="https://github.com/erica63/Data-Visualisation-Using-d3.js"><span>GitHub</span></a></h1>
+      <nav id="menu">
+
+        <!-- Maybe I should make these into lists -->
+        <a href="#">Home</a>
+        <a href="#">Interact</a>
+        <a href="#">Help</a>
+      </nav>
           <!-- Redirecting back to website -->
           <!-- <a href=https://erica63.github.io/Data-Visualisation-Using-d3.js>
           <img src="https://raw.githubusercontent.com/erica63/Data-Visualisation-Using-d3.js/7eefbeabbaf73226cce1f0e29e5bb2f04174607e/graphics/spotifyIcon.svg" class="spotify">
         </a> -->
-          <h1 class="primary-title">Top 50 Spotify Songs of 2019</h1>
-        </div>
-      </div>
     </header>
 
-
+  <!-- Banner -->
+  <section id="banner">
       <div class="main">
-        <section class ="artists-and-songs">
+        <h1 class="primary-title">Top 50 Spotify Songs of 2019</h1>
+        <p> Data Visualization Using D3.JS</p>
+      </div>
+    </section>
+
+    <!-- View / See the artists -->
+    <!-- Maybe wrap section id ? -->
+        <section id ="artists">
           <div class="container">
-            <div class="songs">
-              <h2 class="section-title">All songs</h2>
-              <ul>
-                <a href ="#"><li>bad guy</li></a>
-                <a href ="#"><li>Goodbyes (Feat. Young Thug)</li></a>
-                <a href ="#"><li>Callaita</li></a>
-                <a href ="#"><li>Money In The Grave (Drake ft. Rick Ross)</li></a>
-                <a href ="#"><li>China</li></a>
-                <a href ="#"><li>Ransom</li></a>
-                <a href ="#"><li>Panini</li></a>
-                <a href ="#"><li>Sunflower - Spider-Man: Into the Spider-Verse</li></a>
-                <a href ="#"><li>Truth Hurts</li></a>
-                <a href ="#"><li>Con Calma</li></a>
-                <a href ="#"><li>Soltera - Remix</li></a>
-                <a href ="#"><li>Otro Trago</li></a>
-                <a href ="#"><li>Piece Of Your Heart</li></a>
-                <a href ="#"><li>You Need To Calm Down</li></a>
-                <a href ="#"><li>LA CANCION</li></a>
-                <a href ="#"><li>How Do You Sleep?</li></a>
-                <a href ="#"><li>The London (feat. J. Cole & Travis Scott)</li></a>
-                <a href ="#"><li>Summer Days (feat. Macklemore & Patrick Stump..)</li></a>
-                <a href ="#"><li>It's You</li></a>
-                <a href ="#"><li>7 rings</li></a>
-                <a href ="#"><li>Never Really Over</li></a>
-                <a href ="#"><li>There's still 28 more songs to list...</li></a>
-                <a href ="#"><li>Any better layout for this?</li></a>
-              </ul>
+            <header id ="info-on-artists">
+              <h2>The Artists</h3>
+              <p>This data was found through Kaggle, where the uploader states that they extracted this data<br>
+                through a website called OrganizeYourMusic.<br>
+                Below are the artists behind the top 50 songs on Spotify</p>
+              </header>
 
+              <div class="artists-images">
+                  <a href="#">
+                  <img id="AliGatie" src ="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/AliGatie.jpg?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      AliGatie
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img id="AnuelAA" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/AnuelAA.jpg?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      AnnuelAA
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img  id="ArianaGrande" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/ArianaGrande.jpg?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      Ariana Grande
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img  id="BadBunny" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/BadBunny.jpg?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      Bad Bunny
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img  id="BillieElish" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/BillieElish.png?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      Billie Elish
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img  id="ChrisBrown" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/ChrisBrown.png?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      Chris Brown
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img  id="DaddyYankee" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/DaddyYankee.jpg?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      Daddy Yankee
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img  id="DJSnake" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/DJSnake.jpg?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      DJ Snake
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img  id="Drake" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/Drake.jpg?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      Drake
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img  id="EdSheeran" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/EdSheeran.png?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      Ed Sheeran
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img  id="JBalvin" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/JBalvin.jpg?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      J Balvin
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img  id="JhayCortez" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/JhayCortez.jpg?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      Jhay Cortez
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img  id="JonasBrothers" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/JonasBrothers.jpg?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      Jonas Brothers
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img  id="KatyPerry" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/KatyPerry.png?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      Katy Perry
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img  id="Khalid" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/Khalid.jpg?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      Khalid
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img  id="Kygo" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/Kygo.jpg?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      Khalid
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img  id="LadyGaga" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/LadyGaga.jpg?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      Lady Gaga
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img  id="Lauv" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/Lauv.jpg?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      Lauv
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img  id="LewisCapaldi" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/LewisCapaldi.jpg?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      Lewis Capaldi
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img  id="LilNasX" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/LilNasX.jpg?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      Lil Nas X
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img  id="LilTecca" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/LilTecca.jpg?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      Lil Tecca
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img  id="Lizzo" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/Lizzo.jpg?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      Lizzo
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img  id="Lunay" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/Lunay.jpg?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      Lunay
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img  id="Maluma" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/Maluma.jpg?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      Maluma
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img  id="Marshmello" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/Marshmello.jpg?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      Marshmello
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img  id="MartinGarrix" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/MartinGarrix.jpg?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      Martin Garrix
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img  id="MEDUZA" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/MEDUZA.jpg?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      MEDUZA
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img  id="NickyJam" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/NickyJam.jpg?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      Nicky Jam
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img  id="PostMalone" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/PostMalone.jpg?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      Post Malone
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img  id="Rosalia" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/Rosalia.jpg?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      Rosalia
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img  id="SamSmith" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/SamSmith.jpeg?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      Sam Smith
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img  id="Sech" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/Sech.jpg?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      Sech
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img  id="ShawnMendes" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/ShawnMendes.png?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      Shawn Mendes
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img  id="TaylorSwift" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/TaylorSwift.jpeg?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      Taylor Swift
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img  id="TheChainsmokers" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/TheChainsmokers.jpg?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      The Chainsmokers
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img  id="TonesAndI" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/TonesAndI.jpg?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      Tones And I
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img  id="Y2K" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/Y2K.jpg?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      Y2K
+                    </span>
+                  </p>
+                  </a>
+
+                  <a href="#">
+                  <img  id="YoungThug" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/YoungThug.jpg?raw=true"/>
+                  <p class="details">
+                    <span class="name">
+                      Young Thug
+                    </span>
+                  </p>
+                  </a>
+
+                </div>
+              </div>
+            </section>
+
+
+            <!-- View top 50 songs -->
+            <section id ="songs">
+              <div class="container">
+                <header id ="info-on-songs">
+                  <h2>The Songs</h2>
+                  <p>There are multiple variables to explore within this dataset. Specifically, there are Beats Per Minute,<br>
+                    Genre, Energy, Danceability, Loudness, Liveness and Valence.</p>
+                  </header>
+
+                  <!-- Slideshow of song names, otherwise they take up too much space on the page individually -->
+                  <div class="slideshow-container">
+                    <div class="slides-songs">
+                      <a href ="#">bad guy</a>
+                    </div>
+                    <div class="slides-songs">
+                      <a href ="#">Goodbyes (Feat. Young Thug)</a>
+                    </div>
+                    <div class="slides-songs">
+                      <a href ="#">Callaita</a>
+                    </div>
+                    <div class="slides-songs">
+                      <a href ="#">Money In The Grave (Drake ft. Rick Ross)</a>
+                    </div>
+                    <div class="slides-songs">
+                      <a href ="#">China</a>
+                    </div>
+                    <div class="slides-songs">
+                      <a href ="#">Ransom</a>
+                    </div>
+                    <div class="slides-songs">
+                      <a href ="#">Panini</a>
+                    </div>
+                    <div class="slides-songs">
+                      <a href ="#">Sunflower - Spider-Man: Into the Spider-Verse</a>
+                    </div>
+                    <div class="slides-songs">
+                      <a href ="#">Truth Hurts</a>
+                    </div>
+                    <div class="slides-songs">
+                      <a href ="#">Con Calma</a>
+                    </div>
+                    <div class="slides-songs">
+                      <a href ="#">Soltera - Remix</a>
+                    </div>
+                    <div class="slides-songs">
+                      <a href ="#">Otro Trago</a>
+                    </div>
+                    <div class="slides-songs">
+                      <a href ="#">Piece Of Your Heart</a>
+                    </div>
+                    <div class="slides-songs">
+                      <a href ="#">You Need To Calm Down</a>
+                    </div>
+                    <div class="slides-songs">
+                      <a href ="#">LA CANCION</a>
+                    </div>
+                    <div class="slides-songs">
+                      <a href ="#">How Do You Sleep?</a>
+                    </div>
+                    <div class="slides-songs">
+                      <a href ="#">The London (feat. J. Cole & Travis Scott)</a>
+                    </div>
+                    <div class="slides-songs">
+                      <a href ="#">Summer Days (feat. Macklemore & Patrick Stump..)</a>
+                    </div>
+                    <div class="slides-songs">
+                      <a href ="#">It's You</a>
+                    </div>
+                    <div class="slides-songs">
+                      <a href ="#">7 rings></a>
+                    </div>
+                    <div class="slides-songs">
+                      <a href ="#">Never Really Over</a>
+                    </div>
+                    <div class="slides-songs">
+                      <a href ="#">There's still 28 more songs to list...</a>
+                    </div>
+                    <div class="slides-songs">
+                      <a href ="#">Any better layout for this?</a>
+                    </div>
+
+                    <!-- Need to complete CSS styling for this -->
+                    <!-- Next and Previous buttons -->
+                    <a class="previous" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Quick Statistics -->
+              <section id="qstatistics">
+                <div class="container">
+                  <div class="organized">
+
+                    <div class="reoccuring-artist">
+                      <section class="qstat-reoccuring-artist">
+                      <h3>Reocurring Artist</h3>
+                      <p>Ed Sheeran: 3 different songs show up as top 50 of 2019.</p>
+                    </section>
+                  </div>
+
+                  <div class="highest-danceability">
+                    <section class="qstat-highest-danceability">
+                    <h3>Highest Danceability</h3>
+                    <p>Talk: 90</p>
+                  </section>
+                </div>
+
+                <div class="most-beats-per-minute">
+                  <section class="qstat-most-beats-per-minute">
+                  <h3>Most Beats Per Minute</h3>
+                  <p>boyfriend (with Social House): 190</p>
+                </section>
+              </div>
+
+              <div class="highest-energy">
+                <section class="qstat-highest-energy">
+                <h3>Highest Energy</h3>
+                <p>Never Really Over: 88</p>
+              </section>
             </div>
-            <!-- Information button -->
-            <!-- Come back to this, add an img instead -->
-            <div class="info">
-              <i class="icon-info-sign"></i>
-              <span class="extra-info">All the top 50 songs. Click an artist to highlight the song they've created</span>
-            </div>
 
-            <div class="split">
-                <h2 class="section-title">All artists</h2>
-
-                <!-- Have to figure out how to make it so that when you click artist, the song on the left will be highlighted/expanded. Vice versa -->
-                <a href="#">
-                <img id="AliGatie" src ="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/AliGatie.jpg?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    AliGatie
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img id="AnuelAA" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/AnuelAA.jpg?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    AnnuelAA
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img  id="ArianaGrande" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/ArianaGrande.jpg?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    Ariana Grande
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img  id="BadBunny" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/BadBunny.jpg?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    Bad Bunny
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img  id="BillieElish" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/BillieElish.png?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    Billie Elish
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img  id="ChrisBrown" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/ChrisBrown.png?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    Chris Brown
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img  id="DaddyYankee" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/DaddyYankee.jpg?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    Daddy Yankee
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img  id="DJSnake" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/DJSnake.jpg?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    DJ Snake
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img  id="Drake" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/Drake.jpg?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    Drake
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img  id="EdSheeran" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/EdSheeran.png?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    Ed Sheeran
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img  id="JBalvin" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/JBalvin.jpg?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    J Balvin
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img  id="JhayCortez" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/JhayCortez.jpg?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    Jhay Cortez
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img  id="JonasBrothers" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/JonasBrothers.jpg?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    Jonas Brothers
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img  id="KatyPerry" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/KatyPerry.png?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    Katy Perry
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img  id="Khalid" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/Khalid.jpg?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    Khalid
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img  id="Kygo" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/Kygo.jpg?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    Khalid
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img  id="LadyGaga" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/LadyGaga.jpg?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    Lady Gaga
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img  id="Lauv" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/Lauv.jpg?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    Lauv
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img  id="LewisCapaldi" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/LewisCapaldi.jpg?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    Lewis Capaldi
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img  id="LilNasX" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/LilNasX.jpg?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    Lil Nas X
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img  id="LilTecca" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/LilTecca.jpg?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    Lil Tecca
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img  id="Lizzo" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/Lizzo.jpg?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    Lizzo
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img  id="Lunay" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/Lunay.jpg?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    Lunay
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img  id="Maluma" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/Maluma.jpg?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    Maluma
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img  id="Marshmello" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/Marshmello.jpg?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    Marshmello
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img  id="MartinGarrix" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/MartinGarrix.jpg?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    Martin Garrix
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img  id="MEDUZA" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/MEDUZA.jpg?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    MEDUZA
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img  id="NickyJam" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/NickyJam.jpg?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    Nicky Jam
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img  id="PostMalone" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/PostMalone.jpg?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    Post Malone
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img  id="Rosalia" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/Rosalia.jpg?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    Rosalia
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img  id="SamSmith" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/SamSmith.jpeg?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    Sam Smith
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img  id="Sech" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/Sech.jpg?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    Sech
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img  id="ShawnMendes" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/ShawnMendes.png?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    Shawn Mendes
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img  id="TaylorSwift" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/TaylorSwift.jpeg?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    Taylor Swift
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img  id="TheChainsmokers" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/TheChainsmokers.jpg?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    The Chainsmokers
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img  id="TonesAndI" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/TonesAndI.jpg?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    Tones And I
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img  id="Y2K" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/Y2K.jpg?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    Y2K
-                  </span>
-                </p>
-                </a>
-
-                <a href="#">
-                <img  id="YoungThug" src="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/graphics/YoungThug.jpg?raw=true"/>
-                <p class="details">
-                  <span class="name">
-                    Young Thug
-                  </span>
-                </p>
-                </a>
-
-            </div>
+            <div class="loudest">
+              <section class="qstat-loudest">
+              <h3>Loudest</h3>
+              <p>Otro Trago - Remix: -2 dB</p>
+            </section>
           </div>
-        </section>
 
+          <div class="liveliest">
+            <section class="qstat-liveliest">
+            <h3>Liveliest</h3>
+            <p>One Thing Right: 58</p>
+          </section>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+<!-- Call To Action -->
+<section id="call-to-action">
+  <h2>Interact with data</h2>
+  <ul class="find-patterns">
+    <li><a href="#" class="button">Find Patterns</a></li>
+  </ul>
+</section>
+
+
+<!-- Data Viz Experiment
         <section class ="bubbles">
           <div class="container">
             <h2 class="section-title">Audio Features</h2>
@@ -425,26 +561,28 @@
 
 
               <div id="chart">
-              <h2>Highest popularity rating</h2>
+              <h2>Highest popularity rating</h2> -->
+
               <!-- Including the visualization -->
+
+              <!--
                <script src="chart.js"></script>
             </div>
           </div>
         </section>
-      </div>
+      </div> -->
+
+
 
 
 <!-- Make sure to have a section with the credit to user + URL of dataset, maybe use blockquote-->
-    <footer>
-      <div class="wrap">
-        <!-- Copyright note, feel free to remove. -->
-        &copy; Top 50 Spotify Songs of 2019
-        <a title="README.MD" href="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/README.md">README.MD</a>
+    <footer id="footer">
+      <ul class="links">
+        <li><a title="README.MD" href="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/README.md">README.MD</a></li>
         <!-- Redirecting to repo -->
-        <a title="GitHub Repository" href=https://github.com/erica63/Data-Visualisation-Using-d3.js>
+        <li><a title="GitHub Repository" href=https://github.com/erica63/Data-Visualisation-Using-d3.js>
         <img src= "https://raw.githubusercontent.com/erica63/Data-Visualisation-Using-d3.js/7eefbeabbaf73226cce1f0e29e5bb2f04174607e/graphics/gitHubIconPurpleGradient.svg" alt="GitHub" class="repo">
-        </a>
-      </div>
+        </a></li>
     </footer>
 </body>
 </html>

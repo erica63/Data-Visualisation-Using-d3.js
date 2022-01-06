@@ -2,8 +2,6 @@
 /* Using web font from Google, using @import */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Mono:wght@700&display=swap');
 
-/* Everywhere else we specify the font using ems, ems is a proportinal measurement based on the based font, which is defined as 16px */
-/* This will allow devices to scale to their resolutions*/
 body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
@@ -16,12 +14,146 @@ body {
   /* background:linear-gradient(120deg, #1db954, #191414); */
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  /** min-height: 100vh; */
   margin: 0;
   padding: 0;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+
+/* Header */
+
+nav {
+  position: fixed;
+  display: flex;
+  top: 0.5rem;
+  right: 0.5rem;
+  background-color: blue;
+  /*opacity: 0*/
+}
+
+/* Nav Bar */
+nav a {
+  font-size: 2em;
+  font-weight: 400;
+  text-decoration: none;
+  transition: color .3s ease-in-out;
+  padding: 0.3em 0.3em;
+  text-align: center;
+  /* flex-grow: 1;*/
+  color: white;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #55a657;
+  border-bottom: dotted 1px;
+}
+
+
+/* Banner */
+#banner {
+  padding: 8em 0;
+}
+
+
+/* DIV Container */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1200px;
+  /*max-width: 70em;*/
+}
+
+
+/* Section */
+section {
+  text-align: center;
+}
+
+
+/* Song Slideshow Container */
+.slideshow-container {
+  position: relative;
+  background: white;
+}
+
+/* Song Titles */
+.slides-songs {
+  display: none;
+  padding: 3em;
+  text-align: center;
+}
+
+.previous, .next {
+  position: absolute;
+  padding: 1em;
+  color: black;
+  cursor: pointer;
+  top: 50%;
+  width: auto;
+  font-size: 1em;
+  font-weight: 600;
+  border-radius: 0 2px 2px 0;
+  user-select: none;
+}
+
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 2px 0 0 2px;
+}
+
+.previous:hover, .next:hover {
+  background-color: rgba(0,0,0,0.2);
+  color: #55a657;
+}
+
+
+
+
+
+
+
+/* Headings and Paragraph Styles */
+p {
+  font-weight: 500;
+  color: white;
+  padding: 0 1em;
+  max-width: 600px;
+  margin:1em auto;
+}
+
+h2, h3 {
+  color: #55a657;
+  font-weight: 500;
+  line-height: 1em;
+  margin: 0 0 1em 0;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: 1.75em;
+  color: #55a657;
+  font-weight: 800;
+  line-height: 1em;
+  margin: 0 0 1em 0;
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1em;
+}
+
+
+
+
+
+/* Image Styles */
 
 img {
   max-width: 100%;
@@ -35,76 +167,21 @@ img:hover {
    transform: scale(1.2);
 }
 
-.split img {
-  border-radius: 50%;
+.artists-images img {
+  /*border-radius: 50%;*/
   height: 125px;
   width: 125px;
 }
 
-h1,
-h2,
-h3,
-p {
-  margin: 0;
-}
 
-section {
-  padding: 7em 0;
-}
-
-.container-hero {
-  width: 85%;
-  max-width: 75em;
-  margin: 0 auto;
-}
-
-
-.container {
-  width: 85%;
-  max-width: 65em;
-  margin: 0 0 0 55vh;
-}
-
-.split {
+.artists-images {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5em;
-  margin-right: -50px;
-  justify-content: right;
+  gap: 2em;
   }
 
 
-
-
-
-
-/* Any element that has a sibling before it will get spaced out
-.spacing > * + * {
-  margin-top: var(--spacer, 2rem)
-} */
-
-/* May have to come back to this and specify that it is for the song buttons. It might clash with info button below */
-.btn {
-  display: inline-block;
-  text-decoration: none;
-  font-weight: 200;
-  font-size: 1.125rem;
-  padding: .5em 1.25em;
-  background: green;
-  color: white;
-  border-radius: .7em;
-  transition: all .3s ease-in-out;
-  opacity: .3s linear;
-}
-
-.btn:hover,
-.btn:focus {
-transform: scale (1.05);
-opacity: .95;
-}
-
-
-/* Hero */
+/* Banner */
 .primary-title {
   /* white-space: nowrap; */
   font-size: 4rem;
@@ -115,14 +192,6 @@ opacity: .95;
   display: grid;
 }
 
-.hero {
-  color: white;
-  padding: 15em 0; 
-  background-image: url(https://raw.githubusercontent.com/erica63/Data-Visualisation-Using-d3.js/7eefbeabbaf73226cce1f0e29e5bb2f04174607e/graphics/spotifyIcon.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 60%;
-}
 
 
 /* Main */
@@ -138,85 +207,9 @@ opacity: .95;
   margin-left: -38%;
 }
 
-ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
-ul li {
-  box-sizing: border-box;
-  width: 27em;
-  height: 2.3em;
-  font-size: .8rem;
-  border-radius: .5em;
-  margin: 1.5em;
-  color: white;
-  line-height: 2.5em;
-  box-shadow: 0 0 .5em
-  rgba(0, 0, 0, 1);
-  transition: all 350ms ease-in-out;
-  white-space: nowrap;
-}
 
 
-/* linear gradients I like
-background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
-background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-background:linear-gradient(120deg, #1db954, #191414);
-background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%); */
-/* Might entirely remove perspective */
-/*
-ul li:nth-child(odd) {
-  background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
-  text-align: left;
-  padding-left: 1%;
-  transform: perspective(1000px)
-  rotateY(-45deg);
-}
 
-ul li:nth-child(even) {
-  background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
-  text-align: left;
-  padding-left: 1%;
-  transform: perspective(1000px)
-  rotateY(45deg);
-}
-
-ul li:nth-child(odd):hover {
-  transform: perspective(1000px)
-  rotateY(45deg);
-  padding-left: 5%;
-}
-
-ul li:nth-child(even):hover {
-  transform: perspective(1000px)
-  rotateY(-45deg);
-  padding-left: 5%;
-} */
-
-/* Without perspective */
-ul li:nth-child(odd) {
-  background-image: linear-gradient(to top, #1db954 0%, #38e073 100%);
-  text-align: left;
-  padding-left: 3%;
-}
-
-ul li:nth-child(even) {
-  background-image: linear-gradient(to top, #1db954 0%, #38e073 100%);
-  text-align: left;
-  padding-left: 3%;
-}
-
-ul li:nth-child(odd):hover {
-  transform: scale(1.1);
-  padding-left: 5%;
-}
-
-ul li:nth-child(even):hover {
-  transform: scale(1.1);
-  padding-left: 5%;
-}
 
 /* Main Artists*/
 
@@ -234,16 +227,12 @@ span {
 /* Details about the artist's song shows up to the right of their image */
 /* Need to separate one from another, so only the specific one the user hovers over shows up*/
 .details {
+  font-size: 0.3em;
   position: absolute;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity .2s, visibility .2s;
+
 }
 
-.split:hover .details {
-  visibility: visible;
-  opacity: 1;
-}
+
 
 
 
@@ -251,128 +240,15 @@ span {
 
 
 /* Making sure everything stays contained! Stops the page from scaling when it hits the max */
+/*
 #chart {z-index: 1; width: 500px; height: 500px; margin: 1px; text-align: center; display: inline-block; margin-left: 60px; margin-top: 30px;}
 #chart h2 {color: #1DB954; position: absolute; left: 400px; margin-top: -50px;}
 
 #bubblechart h2 {position: absolute; right: 100px; margin-bottom: 100px;}
 .rectangle:hover {
   opacity: 0.66;
-}
+}*/
 
-/* Info button */
-.extra-info {
-  display: none;
-  line-height: 30px;
-  font-size: 12px;
-  position: absolute;
-  top: 0;
-  left: 50px;
-}
-
-.info:hover .extra-info {
-  display: block;
-}
-
-.info {
-  font-size: 20px;
-  padding-left: 5px;
-  width: 20px;
-  border-radius: 15px;
-}
-
-.info:hover {
-  background-color: white;
-  padding: 0 0 0 5px;
-  width: 315px;
-  text-align: left !important;
-}
-
-/* Header navbar*/
-
-.navbar {width: 100%; height: 15vh; margin: auto; display: flex; align-items: center;}
-.navbar h1 {color: #1DB954; padding-left: 10px; padding-right: 100px;}
-
-.logo {width:300px; cursor: pointer; position: absolute; margin-left: -340px; margin-top: -130px;}
-.repo {width: 30px; cursor: pointer; position: relative; }
-
-.sidebar {
-  width: 280px;
-  border: 2px;
-  padding: 50px;
-}
-
-.content {flex:1;}
-
-.footer {height: 50px;}
-
-
-
-
-/* 1em means (1 x base font), this helps with scaling resolutions for multiple devices  */
-/* h1 { margin: 0 0 1em 0; font-size: 2.8em; font-weight: 700; color: #1DB954;} */
-/* 1.6em = 60% larger than the base font (base font = 16px) */
-/* h2 { margin: 0 0 .5em 0; font-size: 1.6em; font-weight: 700; line-height: 1.1em; color: #1DB954;}
-h3 { margin: 0 0 .5em 0; font-size: 1.3em; font-weight: 700; color: #1DB954;}
-h4 { margin: 0 0 1.5em 0; font-size: 1em; font-weight: 700; color: #1DB954;}
-
-p { margin: 0 0 1em 0; } */
-
-/* Add this for readme.md again */
-a { color: #55a657; }
-a: visited {color: #65b1ff}
-
-
-a.btn { font-size: 1.2em; text-decoration: none; color: #384; border: 1px solid #384; padding: 4px 15px;
-  /* animated transition of .5 seconds */
-        transition: background-color .5s; }
-/* the .1 means it will be 10% transparent */
-a.btn:hover { background-color: rgba(0, 0, 0, .1); }
-
-
-
-
-
-/* Artists in alphabetical order */
-/* Is there a more elegant way to do this? Should I adjust the res within index.html? */
-/*
-#AliGatie {position: relative; float:left; width:100px; height:100px;}
-#AnuelAA {position: relative; float:left; width:100px ;height:100px;}
-#ArianaGrande {position: relative; float:left; width:100px; height:100px;}
-#BadBunny {position: relative; float:left; width:100px; height:100px;}
-#BillieElish {position: relative; float:left; width:100px; height:100px;}
-#ChrisBrown {position: relative; float:left; width:100px; height:100px;}
-#DaddyYankee {position: relative; float:left; width:100px; height:100px;}
-#DJSnake {position: relative; float:left; width:100px; height:100px;}
-#Drake {position: relative; float:left; width:100px; height:100px;}
-#EdSheeran {position: relative; float:left; width:100px; height:100px;}
-#JBalvin {position: relative; float:left; width:100px; height:100px;}
-#JhayCortez {position: relative; float:left; width:100px; height:100px;}
-#JonasBrothers {position: relative; float:left; width:100px; height:100px;}
-#KatyPerry {position: relative; float:left; width:100px; height:100px;}
-#Khalid {position: relative; float:left; width:100px; height:100px;}
-#Kygo {position: relative; float:left; width:100px; height:100px;}
-#LadyGaga {position: relative; float:left; width:100px; height:100px;}
-#Lauv {position: relative; float:left; width:100px; height:100px;}
-#LewisCapaldi {position: relative; float:left; width:100px; height:100px;}
-#LilNasX {position: relative; float:left; width:100px; height:100px;}
-#LilTecca {position: relative; float:left; width:100px; height:100px;}
-#Lizzo {position: relative; float:left; width:100px; height:100px;}
-#Lunay {position: relative; float:left; width:100px; height:100px;}
-#Maluma {position: relative; float:left; width:100px; height:100px;}
-#Marshmello {position: relative; float:left; width:100px; height:100px;}
-#MartinGarrix {position: relative; float:left; width:100px; height:100px;}
-#MEDUZA {position: relative; float:left; width:100px; height:100px;}
-#NickyJam {position: relative; float:left; width:100px; height:100px;}
-#PostMalone {position: relative; float:left; width:100px; height:100px;}
-#Rosalia {position: relative; float:left; width:100px; height:100px;}
-#SamSmith {position: relative; float:left; width:100px; height:100px;}
-#Sech {position: relative; float:left; width:100px; height:100px;}
-#ShawnMendes {position: relative; float:left; width:100px; height:100px;}
-#TaylorSwift {position: relative; float:left; width:100px; height:100px;}
-#TheChainsmokers {position: relative; float:left; width:100px; height:100px;}
-#TonesAndI {position: relative; float:left; width:100px; height:100px;}
-#Y2K {position: relative; float:left; width:100px; height:100px;}
-#YoungThug {position: relative; float:left; width:100px; height:100px;} */
 
 
 /* defining a pseudo-element */
