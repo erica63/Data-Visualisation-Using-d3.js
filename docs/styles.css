@@ -50,6 +50,42 @@ a:hover {
   border-bottom: dotted 1px;
 }
 
+#menuToggler {
+  position: fixed;
+	top: 0.5em;
+	right: 0.5em;
+	height: 1em;
+	width: 1em;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	z-index: 20;
+	background-color: rgba(0, 0, 0, 0.7);
+	padding: 0.25em;
+}
+
+#menuToggler div {
+	height: 20%;
+	background: white;
+	transition: transform 0.3s;
+}
+
+#menuToggler.open div:nth-child(1) {
+	transform: translateY(0.3em) rotate(45deg);
+}
+
+#menuToggler.open div:nth-child(3) {
+	transform: translateY(-0.5em) rotate(-45deg);
+}
+
+#menuToggler.open div:nth-child(2) {
+	opacity: 0;
+}
+
+#menuToggler.open + header nav {
+	transform: translate(0);
+}
+
 
 /* Banner */
 #banner {
@@ -239,10 +275,6 @@ span {
 .details {
   font-size: 0.3em;
   position: absolute;
-
-}
-
-
 
 
 
