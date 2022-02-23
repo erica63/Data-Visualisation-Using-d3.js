@@ -14,6 +14,7 @@ Code written on Atom v1.58
 
 **generally**
 - [ ] update readme.md with more information + add the mockups + checklist w/ dates
+- [ ] make sure to implement a variety of media screens amongst all pages
 
 **index.html**
 - [ ] figure out if there's a way to create a javascript loop for the images uploaded within HTML to reduce redundancy
