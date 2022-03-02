@@ -23,6 +23,10 @@ body {
 
 /* Header */
 
+#banner {
+
+}
+
 nav {
   position: fixed;
   display: flex;
@@ -204,7 +208,7 @@ img {
   transition: all .3s ease-in-out;
 }
 
-img:hover {
+.artists-images img:hover {
    z-index: 1;
    transform: scale(1.2);
 }
