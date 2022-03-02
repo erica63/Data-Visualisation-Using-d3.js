@@ -2,59 +2,110 @@
 /* Using web font from Google, using @import */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Mono:wght@700&display=swap');
 
-body {
-  font-family: 'Poppins', sans-serif;
-  line-height: 1.6;
-  font-size: 1.1rem;
-  font-weight: 700;
-
-  /* black gradient */
-  background-image: linear-gradient(black, #404040);
-  /* green gradient */
-  /* background:linear-gradient(120deg, #1db954, #191414); */
-  display: flex;
-  flex-direction: column;
-  /** min-height: 100vh; */
-  margin: 1em;
+* {
+  margin: 0;
   padding: 0;
-  background-repeat: no-repeat;
+
+}
+
+body {
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  background-image: linear-gradient(black, #404040);
   background-attachment: fixed;
+  height: 100%;
 }
 
-/* Header */
-
-#banner {
-
-}
-
+/*Nav bar */
 nav {
-  position: fixed;
-  display: flex;
-  top: 0.5rem;
-  right: 0.5rem;
-  background-color: white;
-  /*opacity: 0*/
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
+  position: absolute;
+  text-align: right;
 }
 
-/* Nav Bar */
 nav a {
-  font-size: 2em;
-  font-weight: 400;
   text-decoration: none;
-  transition: color .3s ease-in-out;
-  padding: 0.3em 0.3em;
+  font-size: 1em;
   text-align: center;
-  /* flex-grow: 1;*/
+  color: inherit;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  padding: 1em;
+}
+
+nav li:hover {
+  background-color: white;
   color: black;
 }
 
-a:hover {
-  text-decoration: none;
-  color: #55a657;
-  border-bottom: dotted 1px;
+/* Section */
+section {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 40em;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
-#menuToggler {
+/* Hero image / Welcome screen */
+#welcome {
+  background-image: url(https://www.sharewise.com/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBeG1wVnc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--abfb11b385abaca273820f741853a9becd118707/girl-listening-to-music.jpg?locale=us);
+}
+
+.welcome-container {
+margin-top: 15em;
+text-align: center;
+color: white;
+}
+
+.welcome-container h1 {
+  font-size: 4em;
+  text-transform: uppercase;
+  text-shadow: 6px 5px 4px black;
+}
+
+.welcome-container h2 {
+  background-color: #39995a;
+  color: white;
+  font-weight: 500;
+  line-height: 1em;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  margin: 0 0 1em 0;
+  letter-spacing: -0.01em;
+}
+
+/* Interact Button */
+.btn {
+  display: inline-block;
+  width: 200px;
+  font-weight: bold;
+  padding: 10px;
+  color: #fff;
+  border: 4px solid #fff;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease-out, color 0.2s ease-out;
+}
+
+.btn:hover, .btn:active {
+  background-color: #fff;
+  color: #000;
+  transition: background-color 0.3s ease-in, color 0.3s ease-in;
+}
+
+/* hidden on02/03/2022 #menuToggler {
   position: fixed;
 	top: 0.5em;
 	right: 0.5em;
@@ -88,17 +139,15 @@ a:hover {
 
 #menuToggler.open + header nav {
 	transform: translate(0);
-}
+} */
 
 
-/* Banner */
-#banner {
-  padding: 8em 0;
-}
+
+
 
 
 /* DIV Container */
-.container {
+.info-container {
   background-color: white;
   margin-bottom: 3em;
   margin-left: auto;
@@ -109,10 +158,7 @@ a:hover {
 }
 
 
-/* Section */
-section {
-  text-align: center;
-}
+
 
 
 /* Song Slideshow Container */
@@ -159,6 +205,8 @@ section {
 
 
 /* Headings and Paragraph Styles */
+
+
 p {
   font-weight: 500;
   color: black;
@@ -167,6 +215,7 @@ p {
   margin:1em auto;
 }
 
+/*
 h2 {
   background-color: #39995a;
   color: white;
@@ -176,8 +225,9 @@ h2 {
   padding-bottom: 0.3em;
   margin: 0 0 1em 0;
   letter-spacing: -0.01em;
-}
+}*/
 
+/*
 h1 {
   font-size: 1.75em;
   color: #55a657;
@@ -185,7 +235,7 @@ h1 {
   line-height: 1em;
   margin: 0 0 1em 0;
   letter-spacing: -0.01em;
-}
+} */
 
 h2 {
   font-size: 1.5em;
@@ -232,15 +282,16 @@ img {
 
 
 /* Banner */
+/* hidden on 02/03/2022
 .primary-title {
-  /* white-space: nowrap; */
+
   font-size: 4rem;
   font-size: clamp(6rem, calc(5vw + 1rem), 4.5rem);
   line-height: 1.1;
   text-transform: uppercase;
   text-align: center;
   display: grid;
-}
+} */
 
 
 
