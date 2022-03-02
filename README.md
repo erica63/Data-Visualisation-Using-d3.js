@@ -33,23 +33,44 @@ Viva is mandatory. Students without Viva will receive 0% marks for their final s
 - [ ] Update readme.md with more information + add the mockups + checklist w/ dates
 - [ ] Make sure to implement a variety of media screens amongst all pages
 - [ ] Improve organization of the readme.md 
+- [ ] Resize mockups
+
+# **CSS To Do List**
+- [ ] Change the h1/h2/h3/h4 code to be consistent throughout every page
 
 
-**index.html To Do List**
-- [ ] Figure out if there's a way to create a javascript loop for the images uploaded within HTML to reduce redundancy
+# **index.html To Do List**
+![Home Page](https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/mockups/landingpage.png?raw=true "Home Page")
+
+### Menu Toggler
 - [ ] Make the nav bar stay in a fixed position (it currently moves down with you if you scroll)
-- [ ] In the artists section, figure out how to show their names on image hover
-- [ ] In the songs section, make sure the slideshow works correctly
-- [ ] Fill out the quick statistics section with lorem ipsum, need to move on from homepage and ensure the chart within interact page works asap
-- [ ] Should the interact button be at the footer? should it be at the header?  in the center of content? add the button + text and make it look nice
 
-**interact.html To Do List**
+### Banner
+- [ ] Resize banner image
+
+### Artists
+- [ ] Show names on image hover
+
+### Songs
+- [ ] Make sure the word slideshow works correctly
+- [ ] Maybe remove this section
+
+
+### Quick Statistics
+- [ ] Figure out if there's a way to create a javascript loop for the images uploaded within HTML to reduce redundancy
+- [ ] Fill out with lorem ipsum
+
+### Footer
+- [ ] Should the interact button be at the footer? should it be at the header?  in the center of content?
+- [ ] Add button + text
+
+# **interact.html To Do List**
 - [ ] Create the skeleton of page
 - [ ] Implement the chart.js 
 
-**help.html To Do List**
+# **help.html To Do List**
 - [ ] Create the skeleton of page
 
-**chart.js To Do List**
+# **chart.js To Do List**
 - [ ] come back here and update with checklist
 
