@@ -33,11 +33,13 @@ Viva is mandatory. Students without Viva will receive 0% marks for their final s
 
 # APIs
 > Instead of using the smaller dataset from Kaggle, I've looked at a few APIs that can automatically grab the data for the visualization. Below I have listed the APIs that have caught my interest. 
+- https://developer.spotify.com/documentation/web-api/ [09/03/2022 - struggle to use this]
+- https://developer.spotify.com/console/get-playlist-images/ [09/03/2022 - struggle to use this]
 - http://www.penguinrandomhouse.biz/webservices/rest/
 - https://calendarific.com/api-documentation
 - https://www.fruityvice.com/doc/index.html
-- https://developer.spotify.com/documentation/web-api/
-- https://developer.spotify.com/console/get-playlist-images/ [extension of the spotify api]
+- https://openlibrary.org/developers/api 
+- https://www.thecocktaildb.com/api.php?ref=apilist.fun
 
 # **General To Do List**
 - [x] Submit 1st deliverable [14/01/2022]
