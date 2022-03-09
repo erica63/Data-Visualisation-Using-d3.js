@@ -46,6 +46,8 @@ nav li:hover {
   color: black;
 }
 
+
+
 /* Section */
 section {
   background-size: cover;
@@ -142,10 +144,6 @@ color: white;
 } */
 
 
-
-
-
-
 /* DIV Container */
 .info-container {
   background-color: white;
@@ -158,6 +156,23 @@ color: white;
 }
 
 
+/* With help from CTEC3905 lab 7 */
+#search-header {
+  overflow: auto;
+  padding: 0 1rem;
+  background-color: hsl(146, 100%, 50%);
+  color: white;
+}
+
+#search {
+  display: grid;
+  grid-column-gap: 0.5em;
+  grid-template-columns: min-content 1fr;
+}
+
+#search h2 {
+  grid-column: 1 / 3;
+}
 
 
 
