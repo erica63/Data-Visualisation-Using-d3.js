@@ -31,6 +31,14 @@ Viva is mandatory. Students without Viva will receive 0% marks for their final s
 - [ ] What to do about floating mark?
 - [ ] Do I make a mobile.css stylesheet as well?
 
+# APIs
+> Instead of using the smaller dataset from Kaggle, I've looked at a few APIs that can automatically grab the data for the visualization. Below I have listed the APIs that have caught my interest. 
+- http://www.penguinrandomhouse.biz/webservices/rest/
+- https://calendarific.com/api-documentation
+- https://www.fruityvice.com/doc/index.html
+- https://developer.spotify.com/documentation/web-api/
+- https://developer.spotify.com/console/get-playlist-images/ [extension of the spotify api]
+
 # **General To Do List**
 - [x] Submit 1st deliverable [14/01/2022]
 - [x] Update readme.md with more information + add the mockups + checklist w/ dates [02/03/2022]
