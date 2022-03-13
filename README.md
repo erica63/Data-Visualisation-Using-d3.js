@@ -101,4 +101,5 @@ Viva is mandatory. Students without Viva will receive 0% marks for their final s
 - [ ] See if bubbles are correctly connected to dataset
 - [ ] Create the buttons with icons for interaction bar
 - [ ] Change buttons colour on hover
+- [ ] https://archive.nytimes.com/www.nytimes.com/interactive/2013/05/25/sunday-review/corporate-taxes.html (great reference point for search bar usage)
 
