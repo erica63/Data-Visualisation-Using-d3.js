@@ -35,11 +35,11 @@ Viva is mandatory. Students without Viva will receive 0% marks for their final s
 > Instead of using the smaller dataset from Kaggle, I've looked at a few APIs that can automatically grab the data for the visualization. Below I have listed the APIs that have caught my interest. 
 - https://developer.spotify.com/documentation/web-api/ [09/03/2022 - struggle to use this]
 - https://developer.spotify.com/console/get-playlist-images/ [09/03/2022 - struggle to use this]
-- http://www.penguinrandomhouse.biz/webservices/rest/
-- https://calendarific.com/api-documentation
-- https://www.fruityvice.com/doc/index.html
-- https://openlibrary.org/developers/api 
-- https://www.thecocktaildb.com/api.php?ref=apilist.fun
+- https://calendarific.com/api-documentation [13/03/2022 - decided not to use]
+- https://www.fruityvice.com/doc/index.html [13/03/2022 - decided not to use]
+- https://openlibrary.org/developers/api [13/03/2022 - decided not to use]
+- http://www.penguinrandomhouse.biz/webservices/rest/ [13/03/2022 - decided not to use, but may possibly change mind]
+- https://www.thecocktaildb.com/api.php?ref=apilist.fun [13/03/2022 - chosen api]
 
 # **General To Do List**
 - [x] Submit 1st deliverable [14/01/2022]
@@ -47,10 +47,14 @@ Viva is mandatory. Students without Viva will receive 0% marks for their final s
 - [x] Improve organization of the readme.md [02/03/2022]
 - [x] Resize mockups [02/03/2022]
 - [ ] Make sure to implement a variety of media screens amongst all pages
+- [ ] Revise index information and replace information with applicable new API information
+
+# **API To Do List**
+- [ ] Revise index information and replace information with applicable new API information
 
 # **CSS To Do List**
 - [ ] Change the h1/h2/h3/h4 code to be consistent throughout every page
-
+- [ ] https://www.penguinrandomhouse.com/ I like how the nav links get orange outlines once hovered!
 
 # **index.html To Do List**
 ![Home Page](https://raw.githubusercontent.com/erica63/Data-Visualisation-Using-d3.js/571f2b8fa8bf24f487f8cbdfe05c323af227f53e/mockups/landingpage.png "Home Page")
