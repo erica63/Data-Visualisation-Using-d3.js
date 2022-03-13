@@ -28,7 +28,13 @@
 - [x] Update readme.md with more information + add the mockups + checklist w/ dates [02/03/2022]
 - [x] Improve organization of the readme.md [02/03/2022]
 - [x] Resize mockups [02/03/2022]
+- [x] Find suitable public API to stick with [13/03/2022]
+- [x] Brainstorm what possible charts could be made using d3.js with this API [13/03/2022]
+- [x] Create a Project management Section within the GitHub readme.md [13/03/2022]
+- [ ] Revise the graphics + mockups folder, perhaps delete the artist images and get rid of mockups since they are outdated?
+- [ ] Structure the final deliverable report
 - [ ] Make sure to implement a variety of media screens amongst all pages
+
 
 
 
