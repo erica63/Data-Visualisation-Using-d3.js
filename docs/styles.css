@@ -1,4 +1,3 @@
-/* CSS Document for Screens */
 /* Using web font from Google, using @import */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Mono:wght@700&display=swap');
 
@@ -64,33 +63,13 @@ section {
   background-image: url(https://www.sharewise.com/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBeG1wVnc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--abfb11b385abaca273820f741853a9becd118707/girl-listening-to-music.jpg?locale=us);
 }
 
-.welcome-container {
-margin-top: 15em;
-text-align: center;
-color: white;
-}
 
-.welcome-container h1 {
-  font-size: 4em;
-  text-transform: uppercase;
-  text-shadow: 6px 5px 4px black;
-}
 
-.welcome-container h2 {
-  background-color: #39995a;
-  color: white;
-  font-weight: 500;
-  line-height: 1em;
-  padding-top: 0.3em;
-  padding-bottom: 0.3em;
-  margin: 0 0 1em 0;
-  letter-spacing: -0.01em;
-}
-
-/* Interact Button */
+/* Buttons */
 .btn {
   display: inline-block;
   width: 200px;
+  height: 25px;
   font-weight: bold;
   padding: 10px;
   color: #fff;
@@ -144,7 +123,30 @@ color: white;
 } */
 
 
-/* DIV Container */
+/* DIV Containers */
+.welcome-container {
+margin-top: 15em;
+text-align: center;
+color: white;
+}
+
+.welcome-container h1 {
+  font-size: 4em;
+  text-transform: uppercase;
+  text-shadow: 6px 5px 4px black;
+}
+
+.welcome-container h2 {
+  background-color: #39995a;
+  color: white;
+  font-weight: 500;
+  line-height: 1em;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  margin: 0 0 1em 0;
+  letter-spacing: -0.01em;
+}
+
 .info-container {
   background-color: white;
   margin-bottom: 3em;
@@ -155,73 +157,27 @@ color: white;
   /*max-width: 70em;*/
 }
 
-
-/* With help from CTEC3905 lab 7 */
-#search-header {
-  overflow: auto;
-  padding: 0 1rem;
-  background-color: hsl(146, 100%, 50%);
-  color: white;
+.qstatistics-container {
+  background-color: white;
+  margin-bottom: 3em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80em;
+  padding-bottom: 1em;
 }
 
-#search {
-  display: grid;
-  grid-column-gap: 0.5em;
-  grid-template-columns: min-content 1fr;
+.cta-container {
+  background-color: white;
+  margin-bottom: 3em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80em;
+  height: 5em;
+  padding-bottom: 1em;
 }
-
-#search h2 {
-  grid-column: 1 / 3;
-}
-
-
-
-/* Song Slideshow Container */
-.slideshow-container {
-  position: relative;
-  background: white;
-}
-
-/* Song Titles */
-.slides-songs {
-  display: none;
-  padding: 3em;
-  text-align: center;
-}
-
-.previous, .next {
-  position: absolute;
-  padding: 1em;
-  color: black;
-  cursor: pointer;
-  top: 50%;
-  width: auto;
-  font-size: 1em;
-  font-weight: 600;
-  border-radius: 0 2px 2px 0;
-  user-select: none;
-}
-
-.next {
-  position: absolute;
-  right: 0;
-  border-radius: 2px 0 0 2px;
-}
-
-.previous:hover, .next:hover {
-  background-color: rgba(0,0,0,0.2);
-  color: #55a657;
-}
-
-
-
-
-
 
 
 /* Headings and Paragraph Styles */
-
-
 p {
   font-weight: 500;
   color: black;
@@ -263,71 +219,13 @@ h4 {
 
 
 
-
 /* Image Styles */
-
 img {
   max-width: 100%;
   height: auto;
   display: block;
   transition: all .3s ease-in-out;
 }
-
-.artists-images img:hover {
-   z-index: 1;
-   transform: scale(1.2);
-}
-
-.artists-images img {
-
-  /*border-radius: 50%;*/
-  height: 125px;
-  width: 125px;
-}
-
-
-.artists-images {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-  gap: 0.5em;
-  padding-left: 1em;
-  padding-bottom: 1em;
-}
-
-
-/* Banner */
-/* hidden on 02/03/2022
-.primary-title {
-
-  font-size: 4rem;
-  font-size: clamp(6rem, calc(5vw + 1rem), 4.5rem);
-  line-height: 1.1;
-  text-transform: uppercase;
-  text-align: center;
-  display: grid;
-} */
-
-
-
-/* Main */
-.section-title {
-  /* font-size: clamp(1.5rem, calc(3vw + .5rem), 2rem)*/
-  line-height: 1;
-  color: white;
-}
-
-/* Main Songs */
-.songs {
-  float: left;
-  margin-left: -38%;
-}
-
-
-
-
-
-/* Main Artists*/
 
 
 span {
@@ -340,14 +238,7 @@ span {
 }
 
 
-/* Details about the artist's song shows up to the right of their image */
-/* Need to separate one from another, so only the specific one the user hovers over shows up*/
-.details {
-  font-size: 0.3em;
-  position: absolute;
-
-
-
+/* D3.JS & SVG */
 
 
 
@@ -360,11 +251,6 @@ span {
 .rectangle:hover {
   opacity: 0.66;
 }*/
-
-
-
-/* defining a pseudo-element */
-section::after { content:''; display: block; clear: both; }
 
 
 
