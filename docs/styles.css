@@ -186,38 +186,10 @@ p {
   margin:1em auto;
 }
 
-/*
-h2 {
-  background-color: #39995a;
-  color: white;
-  font-weight: 500;
-  line-height: 1em;
-  padding-top: 0.3em;
-  padding-bottom: 0.3em;
-  margin: 0 0 1em 0;
-  letter-spacing: -0.01em;
-}*/
-
-/*
-h1 {
-  font-size: 1.75em;
-  color: #55a657;
-  font-weight: 800;
-  line-height: 1em;
-  margin: 0 0 1em 0;
-  letter-spacing: -0.01em;
-} */
-
-h2 {
-  font-size: 1.5em;
-}
-
 
 h4 {
   color: white;
 }
-
-
 
 /* Image Styles */
 img {
@@ -228,17 +200,19 @@ img {
 }
 
 
-span {
-  line-height: 1.2;
-  color: white;
-  display: block;
-  font-weight: 200;
-  font-size: 1.1rem;
-  text-align: left;
-}
 
 
 /* D3.JS & SVG */
+
+.bubbles {
+  stroke-width: 1px;
+  stroke: black;
+  opacity: .8
+}
+.bubbles:hover {
+  stroke: black;
+}
+
 
 
 
