@@ -1,15 +1,3 @@
-/* Creating a responsive menu */
-menuToggler.addEventListener('click', ev => {
-  menuToggler.classList.toggle('open');
-});
-
-for (const element of document.querySelectorAll('nav a')) {
-  element.addEventListener('click', ev => {
-    menuToggler.classList.remove('open');
-  });
-}
-
-
 /** D3.JS Charts & Code*/
 let data = d3.json('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita')
 let datax = [];
@@ -17,6 +5,7 @@ let datax = [];
 // breakdown function works through elements in the arrays
 async function breakdown() {
   const array = await data;
+  console.log(array);
   array.drinks.forEach((item, i) => {
     datax.push(item);
   });
@@ -26,6 +15,7 @@ async function breakdown() {
   breakdown();
 
   console.log(datax);
+  console.log(data);
 
 
 // bubble chart
@@ -66,3 +56,35 @@ var datay = [
      .text(function(d) {return d.source})
      .style("font-family", "arial")
      .style("font-size", "12px")
+
+
+     function convertDrink(original) {
+         let result = {
+             name: original.strDrink,
+             image: original.strDrinkThumb,
+         };
+         let ingredients = [];
+         for (let i=1; i<15; i++) {
+             if(!original[`strIngredient${i}`]) {
+                 break;
+             }
+             let ingredient = {
+                 name: original[`strIngredient${i}`],
+                 measure: original[`strMeasure${i}`],
+             }
+             ingredients.push(`${ingredient.name} ${ingredient.measure}`);
+         }
+         result.ingredients = ingredients;
+         return result;
+     }
+
+     async function loadData(query) {
+         let original = await d3.json(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${query}`)
+         converted = original['drinks'].map(convertDrink);
+         console.log(original);
+         console.log(converted);
+     }
+
+     mySearchInput.addEventListener('change', ev => {
+         loadData(mySearchInput.value);
+     })
