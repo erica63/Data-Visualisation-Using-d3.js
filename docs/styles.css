@@ -4,24 +4,37 @@
 * {
   margin: 0;
   padding: 0;
-
 }
 
-html, body {
+html,
+body {
+  height: 100%;
   font-size: 15px;
   font-family: 'Poppins', sans-serif;
-  background-image: linear-gradient(black, #404040);
-  background-attachment: fixed;
-  height: 100%;
 }
 
-/*Nav bar */
+
+/*-------------------------------------------*\
+        				 HEADER
+\*-------------------------------------------*/
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 55px;
+}
+
+.cinemalizer img {
+  max-width: 200px;
+}
+
 nav {
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0);
-  color: #fff;
-  position: absolute;
-  text-align: right;
+  background-color: white;
+  color: black;
+  margin: auto 0;
+}
+
+nav li {
+  color: black;
 }
 
 nav a {
@@ -30,20 +43,17 @@ nav a {
   text-align: center;
   transition: background-color 0.7s;
   color: inherit;
+  margin: 20px 10px;
+  flex-grow: 1;
 }
 
 nav ul {
   list-style: none;
 }
 
-nav li {
-  display: inline-block;
-  padding: 1em;
-}
-
-.active, nav li:hover {
-  background-color: #fff;
-  color: black;
+nav li:hover,
+.active {
+  color: red;
 }
 
 
@@ -63,197 +73,81 @@ section {
   padding: 1em;
 }
 
-
-/* Hero image / Welcome screen */
+/* Section imgs */
 #welcome {
-  background-image: url(https://www.sharewise.com/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBeG1wVnc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--abfb11b385abaca273820f741853a9becd118707/girl-listening-to-music.jpg?locale=us);
+  /* background-image: url(https://s3-eu-west-1.amazonaws.com/storage.netro42.net/storage.wrenarchitecture.com/dynamic/5/photos/958000/original/2958.jpg); */
+  background-image: url(https://static.storyhouse.com/app/uploads/2016/10/Storyhouse_0074_cPeter-Cook-scaled.jpg);
 }
 
-#go-back {
-  background-image: url(https://miro.medium.com/max/1200/1*npJ3g9zUbxOg1lwt8uECCw.jpeg);
-  /* background-image: url(http://www.twisteddrinks.com/images/pic01.jpg); */
-}
-
-#about {
-  background-image: url(https://pbs.twimg.com/media/Dw_0zPdVsAA6GsK?format=jpg&name=large);
+#top250 {
+  background-image: url(https://i.dailymail.co.uk/1s/2021/11/24/11/50911809-0-image-a-22_1637752428418.jpg);
 }
 
 /* Buttons */
 .btn {
   display: inline-block;
+  border-radius: 100vh;
   width: 200px;
   height: 25px;
   font-weight: bold;
   padding: 10px;
-  color: #fff;
-  border: 4px solid #fff;
-  outline: none;
+  background-color: #fff;
+  color: black;
   text-align: center;
   text-decoration: none;
-  transition: background-color 0.2s ease-out, color 0.2s ease-out;
+  transition: .5s;
+  border: solid 3px black;
 }
 
-.btn:hover, .btn:active {
-  background-color: #fff;
-  color: #000;
-  transition: background-color 0.3s ease-in, color 0.3s ease-in;
-}
-
-/* hidden on02/03/2022 #menuToggler {
-  position: fixed;
-	top: 0.5em;
-	right: 0.5em;
-	height: 1em;
-	width: 1em;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	z-index: 20;
-	background-color: rgba(0, 0, 0, 0.7);
-	padding: 0.25em;
-}
-
-#menuToggler div {
-	height: 20%;
-	background: white;
-	transition: transform 0.3s;
-}
-
-#menuToggler.open div:nth-child(1) {
-	transform: translateY(0.3em) rotate(45deg);
-}
-
-#menuToggler.open div:nth-child(3) {
-	transform: translateY(-0.5em) rotate(-45deg);
-}
-
-#menuToggler.open div:nth-child(2) {
-	opacity: 0;
-}
-
-#menuToggler.open + header nav {
-	transform: translate(0);
-} */
-
-
-/* DIV Containers */
-.welcome-container, .go-back-container, .about-container {
-margin-top: 15em;
-text-align: center;
-color: white;
-}
-
-.welcome-container h1, .go-back-container h1, .about-container h1 {
-  font-size: 4em;
-  text-transform: uppercase;
-  text-shadow: 6px 5px 4px black;
-}
-
-.welcome-container h2, .about-container h2 {
-  background-color: #39995a;
+.btn:hover,
+.btn:active {
+  background-color: #E34D4D;
   color: white;
-  font-weight: 500;
-  line-height: 1em;
-  padding-top: 0.3em;
-  padding-bottom: 0.3em;
-  margin: 0 0 1em 0;
-  letter-spacing: -0.01em;
+  transition: .5s;
 }
 
-
-.info-container, .qstatistics-container, .interact-container {
-  background-color: white;
-  margin-bottom: 3em;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 2em;
-  width: 80em;
-  padding-bottom: 1em;
-  /*max-width: 70em;*/
+/*-------------------------------------------*\
+        				CONTAINERS
+\*-------------------------------------------*/
+.container {
+  margin: 30px;
+  text-align: center;
+  color: white;
 }
 
-.cta-container {
-  background-color: white;
-  margin-bottom: 3em;
-  margin-left: auto;
-  margin-right: auto;
-  width: 80em;
-  height: 5em;
-  padding-bottom: 1em;
-}
-
-
-
-/* Headings and Paragraph Styles */
-p {
-  font-weight: 500;
+.container h2 {
+  font-size: 2em;
   color: black;
-  padding: 0 1em;
-  max-width: 60em;
-  margin:1em auto;
 }
 
+.container p {
+  color: black;
+}
 
-h4 {
+.container img {
+  max-width: 300px;
+}
+
+.img-container {
+  margin-top: 20vh;
+  text-align: center;
   color: white;
 }
 
-/* Image Styles */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  transition: all .3s ease-in-out;
+.img-container h2 {
+  font-size: 8em;
+  text-shadow: 5px 5px 20px #000000;
 }
 
 
 
-
-/* D3.JS & SVG */
-
-.bubbles {
-  stroke-width: 1px;
-  stroke: black;
-  opacity: .8
-}
+/*-------------------------------------------*\
+        					D3.JS
+\*-------------------------------------------*/
 .bubbles:hover {
   stroke: black;
 }
 
-
-
-
-/* Making sure everything stays contained! Stops the page from scaling when it hits the max */
-/*
-#chart {z-index: 1; width: 500px; height: 500px; margin: 1px; text-align: center; display: inline-block; margin-left: 60px; margin-top: 30px;}
-#chart h2 {color: #1DB954; position: absolute; left: 400px; margin-top: -50px;}
-
-#bubblechart h2 {position: absolute; right: 100px; margin-bottom: 100px;}
-.rectangle:hover {
-  opacity: 0.66;
-}*/
-
-
-
-/* Media Queries */
-@media screen and (max-width: 1000px; ) {
-  h1 { font-size: 2.4em; }
-
-
-
-  /* Footer */
-  footer { font-size: .8em; margin: 40px; color: #999; }
-  footer .content { display: inline; }
-  footer a { margin-left: 30px; color: #777; }
-  footer a:visited { color: #777; }
-  footer a:hover { color: #000; }
-
-  /* Footer */
-  footer::after { content:''; display: block; clear: both;}
-  footer div.content a {
-    display: inline-block; margin: 0 0 10px 0;
-    float: left;
-    clear: both;
-  }
-
+.tooltip {
+  border: solid 1px black;
 }
