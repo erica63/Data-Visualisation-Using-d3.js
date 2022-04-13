@@ -1,104 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Spotify - Data Visualization Using D3.JS</title>
+  <title>Cinemalizer</title>
   <meta http-equiv="content-type" content="text/html"; charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.google.com/specimen/Poppins?query=poppins">
   <link rel="stylesheet" type="text/css" media="screen" href="styles.css">
-
-  <!-- I've created the file d3.v7.js which contains the whole v7.1.1 d3.js library. The following code sources the file -->
-  <script src="d3.v7.js"></script>
-
 </head>
 
-
 <body>
-  <!-- Header + Mobile Navigation -->
+  <!-- Header -->
   <header>
-    <nav id="main">
+    <div id="logo">
+      <h1 class="cinemalizer"><a href="index.html"><img src="../media/cinemalizer.svg" alt="Cinemalizer logo"></a></h1>
+    </div>
+
+    <div id="menuToggler"></div>
+    <nav id="menu">
       <ul>
         <li class="active"><a href="index.html">Home</a></li>
         <li><a href="interact.html">Interact</a></li>
-        <li><a href="about.html">About</a></li>
       </ul>
     </nav>
-    <!--
-    <a id="mobile-header">Menu</a>
-    <nav id="mobile">
-    <ul id="mobile-navigation">
-    <li class="active"><a href="index.html">Home</a></li>
-    <li><a href="interact.html">Interact</a></li>
-    <li><a href="about.html">About</a></li>
-  </ul>
-</nav> -->
 </header>
-
-<!-- Menu Toggler from lab -->
-<div id="menuToggler">
-  <div></div>
-  <div></div>
-  <div></div>
-</div>
 
 <!-- Welcome screen -->
 <section id="welcome">
-  <div class="welcome-container">
-    <h1>Data Visualization Using D3.JS</h1>
-    <h2>Using Cocktail API</h2>
+  <div class="img-container">
+    <h2>Welcome</h2>
     <a class="btn" href="interact.html">Interact</a>
-  </div>
-</section>
-
-<!-- Information -->
-<section id ="info">
-  <div class="info-container">
-    <header id ="info-on-cocktails">
-
-      <h1>Cocktails</h1>
-      <p>This data is available on a website called <a href="https://www.thecocktaildb.com/api.php">The Cocktail DB</a></p>
-    </header>
-
-    <div class="cocktail-images">
-      <!-- JS code to show img? -->
-
-    </div>
   </div>
 </section>
 
 <!-- Quick Statistics -->
 <section id="qstatistics">
-  <div class="qstatistics-container">
-    <h1>Quick Statistics</h1>
-    <h2>Margarita Ingredient Breakdown</h2>
-    <div class="bubblechart">
-      <svg width="500" height="500"></svg>
-      <script src="menu.js"></script>
-    </div>
+  <div class="container">
+    <h2>Quick Statistics</h2>
+    <p>Get to know the data (simple bar chart goes below here)</p>
+    <!-- Insert simple bar chart here -->
+    <svg width="500" height="500"></svg>
+  </div>
+</section>
+
+<section id="info">
+  <div class="container">
+    <h2>Created with</h2>
+    <a href="https://d3js.org/" title="d3js website" target="_blank">
+      <img src="../media/d3Logo.svg" alt="d3js logo">
+    </a>
+    <a href="https://imdb-api.com/" title="imdb api website" target="_blank">
+      <img src="../media/imdbLogo.svg" alt="imDb logo">
+    </a>
+    <a href="https://github.com/erica63" title="GitHub profile" target="_blank">
+      <img src="../media/githubLogo.svg" alt="Github logo">
+    </a>
   </div>
 </section>
 
 
-
 <!-- Call To Action -->
 <section id="cta">
-  <div class="cta-container">
-    <h2>Interact with data</h2>
+  <div class="container">
+    <h2>Interact with data now</h2>
     <a class="btn" href="interact.html">Find Patterns</a>
   </ul>
 </div>
 </section>
 
-
-
-<!-- Make sure to have a section with the credit to user + URL of dataset, maybe use blockquote-->
+<!-- Make sure to have a section with the credit to api -->
 <footer id="footer">
+  <script src="menu.js"></script>
   <ul class="links">
-    <li><a title="README.MD" href="https://github.com/erica63/Data-Visualisation-Using-d3.js/blob/main/README.md">README.MD</a></li>
-    <!-- Redirecting to repo -->
-    <li><a title="GitHub Repository" href=https://github.com/erica63/Data-Visualisation-Using-d3.js>
-      <img src= "https://raw.githubusercontent.com/erica63/Data-Visualisation-Using-d3.js/7eefbeabbaf73226cce1f0e29e5bb2f04174607e/graphics/gitHubIconPurpleGradient.svg" alt="GitHub" class="repo">
-    </a></li>
+  </ul>
   </footer>
+
 </body>
 </html>

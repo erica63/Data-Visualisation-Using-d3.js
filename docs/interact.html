@@ -1,89 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Spotify - Data Visualization Using D3.JS</title>
-	<link rel="stylesheet" href="styles.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<!-- I've created the file d3.v7.js which contains the whole v7.1.1 d3.js library. The following code sources the file -->
-	<script src="d3.v7.js"></script>
-	<script src="scripts.js"></script>
+  <title>Cinemalizer</title>
+  <meta http-equiv="content-type" content="text/html"; charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.google.com/specimen/Poppins?query=poppins">
+  <link rel="stylesheet" type="text/css" media="screen" href="styles.css">
+  <script src="d3.v7.js"></script>
 </head>
 
 <body>
-	<!-- Header + Mobile Navigation -->
-	<header>
-		<nav id="main">
-			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li class="active"><a href="interact.html">Interact</a></li>
-				<li><a href="about.html">About</a></li>
-			</ul>
-		</nav>
-		<!--
-		<a id="mobile-header">Menu</a>
-		<nav id="mobile">
-		<ul id="mobile-navigation">
-		<li><a href="index.html">Home</a></li>
-		<li class="active"><a href="interact.html">Interact</a></li>
-		<li><a href="help.html">Help</a></li>
-	</ul>
-</nav> -->
+  <!-- Header -->
+  <header>
+    <div id="logo">
+      <h1 class="cinemalizer"><a href="index.html"><img src="../media/cinemalizer.svg" alt="Cinemalizer logo"></a></h1>
+    </div>
+
+    <div id="menuToggler"></div>
+    <nav id="menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="active"><a href="interact.html">Interact</a></li>
+      </ul>
+    </nav>
 </header>
 
-<!-- Menu Toggler from lab -->
-<div id="menuToggler">
-	<div></div>
-	<div></div>
-	<div></div>
-</div>
+  <section id="top250">
+    <div class="img-container">
+      <h2>Top 250 Bubble Chart</h2>
+      <div id="viz"></div>
+    </div>
+  </section>
 
-<!-- Go back -->
-<section id="go-back">
-	<div class="go-back-container">
-		<h1>Data Visualization Using D3.JS</h1>
-		<a class="btn" href="index.html">Go Back</a>
-		<a class="btn" href="about.html">Learn More</a>
-	</div>
-</section>
+	<footer>
+		<script src="charts.js"></script>
+		<script src="menu.js"></script>
+	</footer>
 
-<!-- Interact screen -->
-<div class="container">
-
-	<!-- With help & guidance from CTEC3905 lab 7 + supervisor -->
-	<section class="search">
-		<div class="search-container">
-			<label for="mySearchInput">Search:</label>
-			<input id="mySearchInput" type="search">
-		</div>
-	</section>
-
-	<section id="interact">
-		<div class="interact-container">
-			<h1>Data Visualization Using D3.JS</h1>
-			<div id="title">Cocktails: Alcoholic VS Non-Alcoholic</div>
-			<div clas="vis-container">
-				<svg width="500" height="500"></svg>
-			</div>
-		</div>
-	</section>
-</div>
-
-
-
-
-
-
-<main id="results">
-
-</main>
-
-
-<footer>
-	Created using https://openlibrary.org/isbn/9780385533225
-</footer>
-<script src="d3.js"></script>
-<script src="menu.js"></script>
 </body>
 </html>
