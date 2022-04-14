@@ -1,5 +1,5 @@
 /* Using web font from Google, using @import */
-@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Mono:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 
 * {
   margin: 0;
@@ -8,11 +8,14 @@
 
 html,
 body {
+  font-family: 'Questrial', sans-serif;
   height: 100%;
-  font-size: 15px;
-  font-family: 'Poppins', sans-serif;
+  /* background-color: #1F1F1F; */
+  /* background-color: #000000; */
+  background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+  background-attachment: fixed;
+  color: #fff;
 }
-
 
 /*-------------------------------------------*\
         				 HEADER
@@ -21,41 +24,89 @@ header {
   display: flex;
   justify-content: space-between;
   height: 55px;
+  background-color: #0c0c0c;
+  color: white;
 }
 
-.cinemalizer img {
+#logo {
+  z-index: 99;
+  margin: 0 10px;
+}
+
+/* .cinemalizer img {
   max-width: 200px;
+} */
+
+h1 {
+  margin: 10px;
+}
+
+#menu {
+  display: none;
+  background-color: #0c0c0c;
+}
+
+#menu.open {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-evenly;
+  position: absolute;
+  height: 160px;
+  width: 100vw;
+  background-color: #0c0c0c;
+}
+
+#menuToggler {
+  margin: 0 10px;
+  z-index: 99;
+  cursor: pointer;
+  font-size: 3em;
 }
 
 nav {
-  background-color: white;
-  color: black;
+  color: #222;
   margin: auto 0;
-}
-
-nav li {
-  color: black;
 }
 
 nav a {
   text-decoration: none;
   font-size: 1em;
-  text-align: center;
-  transition: background-color 0.7s;
   color: inherit;
-  margin: 20px 10px;
-  flex-grow: 1;
+  margin: 0 10px;
 }
 
 nav ul {
   list-style: none;
+  margin-top: 60px;
+}
+
+nav li {
+  display: inline-block;
+  color: #fff;
+  font-size: 1.5em;
 }
 
 nav li:hover,
 .active {
-  color: red;
+  color: #dc143c;
+  font-weight: bold;
 }
 
+#links img {
+  margin: 2px;
+  width: 45px;
+  transition: all .5s ease;
+}
+
+#links img:hover {
+  filter: brightness(0.8);
+  transform: translateY(-0.15em);
+	transition: all .5s ease;
+}
+
+#viz {
+  width: auto;
+}
 
 /* Section */
 section {
@@ -66,62 +117,112 @@ section {
   justify-content: center;
   text-align: center;
   min-height: 70%;
-}
-
-.search {
-  background-color: #62bf5a;
-  padding: 1em;
+  overflow: hidden;
 }
 
 /* Section imgs */
-#welcome {
+/* #welcome { */
   /* background-image: url(https://s3-eu-west-1.amazonaws.com/storage.netro42.net/storage.wrenarchitecture.com/dynamic/5/photos/958000/original/2958.jpg); */
-  background-image: url(https://static.storyhouse.com/app/uploads/2016/10/Storyhouse_0074_cPeter-Cook-scaled.jpg);
-}
+  /* background-image: url(https://static.storyhouse.com/app/uploads/2016/10/Storyhouse_0074_cPeter-Cook-scaled.jpg); */
+/* } */
 
 #top250 {
   background-image: url(https://i.dailymail.co.uk/1s/2021/11/24/11/50911809-0-image-a-22_1637752428418.jpg);
 }
 
 /* Buttons */
-.btn {
-  display: inline-block;
-  border-radius: 100vh;
+button {
+  margin-top: 20px;
+  cursor: pointer;
   width: 200px;
-  height: 25px;
-  font-weight: bold;
-  padding: 10px;
-  background-color: #fff;
-  color: black;
-  text-align: center;
-  text-decoration: none;
-  transition: .5s;
-  border: solid 3px black;
+  height: 60px;
+  border: 0;
+  padding: 12px 10px;
+  outline: none;
+  color: #fff;
+  background: linear-gradient(to right, #ab0f2e, #dc143c);
+  border-radius: 10px;
+  transition: width 0.5s;
+  font-size: 1.5em;
+  box-shadow: 1px 1px 7px #000;
 }
 
-.btn:hover,
-.btn:active {
-  background-color: #E34D4D;
-  color: white;
-  transition: .5s;
+button img {
+  display: none;
+  width: 50px;
+  height: 20px;
+}
+
+button:hover img {
+  display: block;
+}
+
+button:hover {
+  width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 /*-------------------------------------------*\
         				CONTAINERS
 \*-------------------------------------------*/
+hr {
+  border: 0;
+  border-top: 3px solid #dc143c;
+  width: 180px;
+  margin-top: 5px;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  /* margin: 0 8vw; */
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0 8vw;
+}
+
+.text-content h2 {
+  font-size: 3em;
+}
+
+.text-content h3 {
+  font-size: 1em;
+  font-weight: lighter;
+  padding: 15px;
+}
+
+.picture-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.picture-content img {
+  height: 300px;
+}
+
 .container {
   margin: 30px;
   text-align: center;
-  color: white;
 }
 
 .container h2 {
   font-size: 2em;
-  color: black;
 }
 
 .container p {
-  color: black;
 }
 
 .container img {
@@ -131,7 +232,6 @@ section {
 .img-container {
   margin-top: 20vh;
   text-align: center;
-  color: white;
 }
 
 .img-container h2 {
@@ -150,4 +250,44 @@ section {
 
 .tooltip {
   border: solid 1px black;
+}
+
+
+/*-------------------------------------------*\
+        			MEDIA QUERIES
+\*-------------------------------------------*/
+@media only screen and (min-width: 720px) {
+  header {
+    justify-content: space-between;
+  }
+
+  #menuToggler {
+    display: none;
+  }
+
+  #menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #menu.open {
+    display: flex;
+    /* justify-content: flex-end; */
+    /* align-items: flex-start; */
+    flex-direction: row;
+    position: relative;
+    background-color: transparent;
+    height: auto;
+    width: auto;
+  }
+
+  #links img {
+    width: 35px;
+  }
+
+  nav ul {
+    margin-top: auto;
+    margin-bottom: 7px;
+  }
 }
