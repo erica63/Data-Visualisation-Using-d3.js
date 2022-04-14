@@ -1,10 +1,6 @@
-/* Creating a responsive menu */
+/* The menuToggler helps ensure that the website has mobile-first responsiveness. */
 menuToggler.addEventListener('click', ev => {
-  menuToggler.classList.toggle('open');
+  menu.classList.toggle('open');
+  links.classList.toggle('open');
+  menuToggler.textContent = menuToggler.textContent === "" ? "≡" : "×";
 });
-
-for (const element of document.querySelectorAll('nav a')) {
-  element.addEventListener('click', ev => {
-    menuToggler.classList.remove('open');
-  });
-}

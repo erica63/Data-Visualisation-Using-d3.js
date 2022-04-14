@@ -4,7 +4,6 @@
   <title>Cinemalizer</title>
   <meta http-equiv="content-type" content="text/html"; charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.google.com/specimen/Poppins?query=poppins">
   <link rel="stylesheet" type="text/css" media="screen" href="styles.css">
 </head>
 
@@ -12,67 +11,77 @@
   <!-- Header -->
   <header>
     <div id="logo">
-      <h1 class="cinemalizer"><a href="index.html"><img src="../media/cinemalizer.svg" alt="Cinemalizer logo"></a></h1>
+      <!-- <h1 class="cinemalizer"><a href="index.html"><img src="../media/cinemalizer-logo-v2.svg" alt="Cinemalizer logo"></a></h1> -->
+      <h1>Cinemalizer</h1>
     </div>
 
-    <div id="menuToggler"></div>
+    <div id="menuToggler">≡</div> <!-- TODO: Use other menu icon inside media folder -->
     <nav id="menu">
+      <div id="links">
+        <a href="https://www.linkedin.com/in/erica-thuet/" title="LinkedIn profile link" target="_blank"><img src="../media/linkedin-logo.svg" alt="LinkedIn logo"></a>
+        <a href="https://github.com/erica63" title="GitHub profile link" target="_blank"><img src="../media/github-logo.svg" alt="GitHub logo"></a>
+        <a href="https://d3js.org/" title="D3.JS website link" target="_blank"><img src="../media/d3js-logo.svg" alt="D3.JS logo"></a>
+        <a href="https://imdb-api.com/" title="ImDb api link" target="_blank"><img src="../media/imdb-logo.svg" alt="ImDb logo"></a>
+      </div>
       <ul>
         <li class="active"><a href="index.html">Home</a></li>
         <li><a href="interact.html">Interact</a></li>
       </ul>
     </nav>
-</header>
+  </header>
 
-<!-- Welcome screen -->
-<section id="welcome">
-  <div class="img-container">
-    <h2>Welcome</h2>
-    <a class="btn" href="interact.html">Interact</a>
+  <!-- Welcome screen -->
+  <section id="hero">
+    <div class="hero-container">
+      <div class="text-content">
+        <h2>The best way to find something to watch!</h2>
+        <h3>With dynamic data visualizations</h3>
+      </div>
+      <div class="picture-content">
+        <img src="../media/phone-cinema.png">
+        <!-- <img src="../media/popcorn1.png"> -->
+        <button type="button" href="interact.html">Get Started<img src="../media/arrow3.svg"</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="container">
+      <h2>Features</h2>
+      <hr>
+
+    </div>
+  </section>
+
+  <section id="info">
+    <div class="container">
+      <h2>Created with</h2>
+      <a href="https://d3js.org/" title="d3js website" target="_blank">
+        <img src="../media/d3Logo.svg" alt="d3js logo">
+      </a>
+      <a href="https://imdb-api.com/" title="imdb api website" target="_blank">
+        <img src="../media/imdbLogo.svg" alt="imDb logo">
+      </a>
+      <a href="https://github.com/erica63" title="GitHub profile" target="_blank">
+        <img src="../media/githubLogo.svg" alt="Github logo">
+      </a>
+    </div>
+  </section>
+
+
+  <!-- Call To Action -->
+  <section id="cta">
+    <div class="container">
+      <h2>Interact with data now</h2>
+      <a class="btn" href="interact.html">Find Patterns</a>
+    </ul>
   </div>
-</section>
-
-<!-- Quick Statistics -->
-<section id="qstatistics">
-  <div class="container">
-    <h2>Quick Statistics</h2>
-    <p>Get to know the data (simple bar chart goes below here)</p>
-    <!-- Insert simple bar chart here -->
-    <svg width="500" height="500"></svg>
-  </div>
-</section>
-
-<section id="info">
-  <div class="container">
-    <h2>Created with</h2>
-    <a href="https://d3js.org/" title="d3js website" target="_blank">
-      <img src="../media/d3Logo.svg" alt="d3js logo">
-    </a>
-    <a href="https://imdb-api.com/" title="imdb api website" target="_blank">
-      <img src="../media/imdbLogo.svg" alt="imDb logo">
-    </a>
-    <a href="https://github.com/erica63" title="GitHub profile" target="_blank">
-      <img src="../media/githubLogo.svg" alt="Github logo">
-    </a>
-  </div>
-</section>
-
-
-<!-- Call To Action -->
-<section id="cta">
-  <div class="container">
-    <h2>Interact with data now</h2>
-    <a class="btn" href="interact.html">Find Patterns</a>
-  </ul>
-</div>
 </section>
 
 <!-- Make sure to have a section with the credit to api -->
 <footer id="footer">
   <script src="menu.js"></script>
-  <ul class="links">
-  </ul>
-  </footer>
+</footer>
 
 </body>
 </html>

@@ -90,13 +90,13 @@ async function storeMovieData() {
         .transition()
         .duration(200)
         .style("opacity", "1")
+        .style("left", (d.pageX - 35) + "px")
+        .style("top", (d.pageY - 30) + "px")
 
       tooltip
         .html("rank ", function (d, i) {
           return (movieRank[i]);
         })
-        .style("left", (d.pageX - 35) + "px")
-        .style("top", (d.pageY - 30) + "px")
     });
 
   chartGroup.append("g")
