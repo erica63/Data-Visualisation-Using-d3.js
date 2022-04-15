@@ -10,10 +10,7 @@ html,
 body {
   font-family: 'Questrial', sans-serif;
   height: 100%;
-  /* background-color: #1F1F1F; */
-  /* background-color: #000000; */
-  background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
-  background-attachment: fixed;
+  background-color: #111112;
   color: #fff;
 }
 
@@ -115,7 +112,6 @@ section {
   background-repeat: no-repeat;
   background-attachment: fixed;
   justify-content: center;
-  text-align: center;
   min-height: 70%;
   overflow: hidden;
 }
@@ -130,40 +126,6 @@ section {
   background-image: url(https://i.dailymail.co.uk/1s/2021/11/24/11/50911809-0-image-a-22_1637752428418.jpg);
 }
 
-/* Buttons */
-button {
-  margin-top: 20px;
-  cursor: pointer;
-  width: 200px;
-  height: 60px;
-  border: 0;
-  padding: 12px 10px;
-  outline: none;
-  color: #fff;
-  background: linear-gradient(to right, #ab0f2e, #dc143c);
-  border-radius: 10px;
-  transition: width 0.5s;
-  font-size: 1.5em;
-  box-shadow: 1px 1px 7px #000;
-}
-
-button img {
-  display: none;
-  width: 50px;
-  height: 20px;
-}
-
-button:hover img {
-  display: block;
-}
-
-button:hover {
-  width: 220px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 /*-------------------------------------------*\
         				CONTAINERS
 \*-------------------------------------------*/
@@ -172,6 +134,7 @@ hr {
   border-top: 3px solid #dc143c;
   width: 180px;
   margin-top: 5px;
+  margin-bottom: 25px;
 }
 
 .hero-container {
@@ -181,7 +144,6 @@ hr {
   justify-content: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  /* margin: 0 8vw; */
 }
 
 .text-content {
@@ -194,6 +156,7 @@ hr {
 
 .text-content h2 {
   font-size: 3em;
+  text-shadow: 0px 0px 3px #fff;
 }
 
 .text-content h3 {
@@ -214,32 +177,155 @@ hr {
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
   margin: 30px;
-  text-align: center;
+  /* background-color: #1f1f1f; */
+  border-radius: 30px;
+  padding: 7vw;
+  background-image: linear-gradient(76deg, #161616 20%, #303030 74%);
 }
 
 .container h2 {
   font-size: 2em;
+  font-weight: lighter;
 }
 
-.container p {
+.features-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
-.container img {
-  max-width: 300px;
+.features-content h3 {
+  margin-top: 10px;
+  text-transform: uppercase;
 }
 
-.img-container {
-  margin-top: 20vh;
-  text-align: center;
+.features-content img {
+  height: 40px;
+  border-radius: 50vw;
+  /* filter: brightness(.9) invert(1); */
+  /* filter: brightness(.9) invert(.9); */
+  margin-right: 10px;
 }
 
-.img-container h2 {
-  font-size: 8em;
-  text-shadow: 5px 5px 20px #000000;
+.features-content p {
+  padding: 6px 15px 22px 0;
 }
 
+/* .carousel-container {
+  width: 30%;
+  margin: 0 auto;
+  position: relative;
+  border: 5px solid black;
+} */
 
+.carousel {
+  width: 30%;
+  margin: 0 auto;
+  position: relative;
+  border: 5px solid black;
+}
+
+.carousel-container {
+  transition: all 0.3s ease;
+}
+
+.carousel-container img {
+  width: 100%;
+  transition: all 0.3s ease;
+  border: 3px solid white;
+}
+
+.card {
+  position: absolute;
+  display: flex;
+}
+
+.carouselSlide {
+  display: block;
+}
+
+.card h3 {
+  position: absolute;
+  font-size: 1em;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+}
+
+.carousel-slide {
+  display: flex;
+  width: 100%;
+  height: 300px;
+}
+
+/*-------------------------------------------*\
+        			  	BUTTONS
+\*-------------------------------------------*/
+
+#get-started {
+  margin-top: 20px;
+  cursor: pointer;
+  width: 200px;
+  height: 60px;
+  border: 0;
+  padding: 12px 10px;
+  outline: none;
+  color: #fff;
+  background: linear-gradient(to right, #7a081f, #dc143c);
+  border-radius: 10px;
+  transition: width 0.5s;
+  font-size: 1.5em;
+  box-shadow: 1px 1px 7px #000;
+}
+
+#get-started img {
+  display: none;
+  width: 50px;
+  height: 20px;
+}
+
+#get-started:hover img {
+  display: block;
+}
+
+#get-started:hover {
+  width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#prevBtn {
+  position: absolute;
+  font-size: 1em;
+  left: 10px;
+  font-weight: 700;
+}
+
+#nextBtn {
+  position: absolute;
+  font-size: 1em;
+  right: 10px;
+  font-weight: 700;
+}
+
+#prevBtn,
+#nextBtn {
+  cursor: pointer;
+  background: #fff;
+  border: 0;
+  border-radius: 50%;
+  outline: none;
+  width: 30px;
+  height: 30px;
+  padding: 2px;
+  box-shadow: 1px 1px 7px #b9b9b9;
+}
 
 /*-------------------------------------------*\
         					D3.JS
@@ -251,7 +337,6 @@ hr {
 .tooltip {
   border: solid 1px black;
 }
-
 
 /*-------------------------------------------*\
         			MEDIA QUERIES

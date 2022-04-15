@@ -34,13 +34,14 @@
   <section id="hero">
     <div class="hero-container">
       <div class="text-content">
-        <h2>The best way to find something to watch!</h2>
+        <!-- <h2>The best way to find something to watch!</h2> -->
+        <h2>Find your next movie.</h2>
         <h3>With dynamic data visualizations</h3>
       </div>
       <div class="picture-content">
         <img src="../media/phone-cinema.png">
         <!-- <img src="../media/popcorn1.png"> -->
-        <button type="button" href="interact.html">Get Started<img src="../media/arrow3.svg"</button>
+        <button id="get-started" href="interact.html">Get started<img src="../media/arrow.svg"</button>
       </div>
     </div>
   </section>
@@ -49,22 +50,45 @@
     <div class="container">
       <h2>Features</h2>
       <hr>
-
+      <!-- <div class="features-content"> -->
+        <div class="features-content">
+          <img src="../media/set3/10.svg">
+          <h3>Posters</h3>
+          <p>See each movie poster in an instant.</p>
+        </div>
+        <div class="features-content">
+          <img src="../media/set3/8.svg">
+          <h3>Cast</h3>
+          <p>Find the full cast of any movie.</p>
+        </div>
+        <div class="features-content">
+          <img src="../media/set3/5.svg">
+          <h3>Ratings</h3>
+          <p>An abundance of reviews from IMDB, Metacritic and more.</p>
+        </div>
+        <div class="features-content">
+          <img src="../media/set3/9.svg">
+          <h3>Categories</h3>
+          <p>Browse through mystery, horror, or comedy.</p>
+        </div>
+        <div class="features-content">
+          <img src="../media/set3/7.svg">
+          <h3>Visualizations</h3>
+          <p>And most importantly, interact with the data.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="info">
-    <div class="container">
-      <h2>Created with</h2>
-      <a href="https://d3js.org/" title="d3js website" target="_blank">
-        <img src="../media/d3Logo.svg" alt="d3js logo">
-      </a>
-      <a href="https://imdb-api.com/" title="imdb api website" target="_blank">
-        <img src="../media/imdbLogo.svg" alt="imDb logo">
-      </a>
-      <a href="https://github.com/erica63" title="GitHub profile" target="_blank">
-        <img src="../media/githubLogo.svg" alt="Github logo">
-      </a>
+  <section id="carousel">
+    <div class="carousel-container">
+      <h2>Coming Soon</h2>
+      <hr>
+      <div class="carousel-slide">
+        <!-- JS updates this section with API fetch -->
+      </div>
+      <button id="prevBtn">&#60;</button>
+      <button id="nextBtn">&#62;</button>
     </div>
   </section>
 
@@ -73,6 +97,7 @@
   <section id="cta">
     <div class="container">
       <h2>Interact with data now</h2>
+      <hr>
       <a class="btn" href="interact.html">Find Patterns</a>
     </ul>
   </div>
@@ -80,6 +105,7 @@
 
 <!-- Make sure to have a section with the credit to api -->
 <footer id="footer">
+  <script src="coming-soon.js"></script>
   <script src="menu.js"></script>
 </footer>
 
