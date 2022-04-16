@@ -23,6 +23,8 @@ header {
   height: 55px;
   background-color: #0c0c0c;
   color: white;
+  border-bottom: 3px solid #dc143c;
+  background-image: linear-gradient(76deg, #161616 20%, #303030 74%);
 }
 
 #logo {
@@ -40,7 +42,7 @@ h1 {
 
 #menu {
   display: none;
-  background-color: #0c0c0c;
+  /* background-color: #0c0c0c; */
 }
 
 #menu.open {
@@ -51,6 +53,8 @@ h1 {
   height: 160px;
   width: 100vw;
   background-color: #0c0c0c;
+  border-bottom: 3px solid #dc143c;
+  background-image: linear-gradient(76deg, #161616 20%, #303030 74%);
 }
 
 #menuToggler {
@@ -106,7 +110,7 @@ nav li:hover,
 }
 
 /* Section */
-section {
+/* section {
   display: flex;
   background-size: cover;
   background-repeat: no-repeat;
@@ -114,7 +118,7 @@ section {
   justify-content: center;
   min-height: 70%;
   overflow: hidden;
-}
+} */
 
 /* Section imgs */
 /* #welcome { */
@@ -132,7 +136,7 @@ section {
 hr {
   border: 0;
   border-top: 3px solid #dc143c;
-  width: 180px;
+  width: 200px;
   margin-top: 5px;
   margin-bottom: 25px;
 }
@@ -188,7 +192,8 @@ hr {
   background-image: linear-gradient(76deg, #161616 20%, #303030 74%);
 }
 
-.container h2 {
+.container h2,
+.carousel-container h2 {
   font-size: 2em;
   font-weight: lighter;
 }
@@ -216,57 +221,48 @@ hr {
   padding: 6px 15px 22px 0;
 }
 
-/* .carousel-container {
-  width: 30%;
+/* #carousel {
+  width: 300px;
+  height: 500px;
   margin: 0 auto;
   position: relative;
-  border: 5px solid black;
 } */
 
-.carousel {
-  width: 30%;
-  margin: 0 auto;
-  position: relative;
-  border: 5px solid black;
-}
-
 .carousel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(76deg, #161616 20%, #303030 74%);
   transition: all 0.3s ease;
+  border-radius: 30px;
+  padding: 3vh 0 8vh 0;
+  margin: 7vw;
 }
 
 .carousel-container img {
-  width: 100%;
+  width: 150px;
   transition: all 0.3s ease;
   border: 3px solid white;
 }
 
 .card {
-  position: absolute;
-  display: flex;
+  display: none;
 }
 
-.carouselSlide {
-  display: block;
+.movie-content {
+  position: absolute;
 }
 
-.card h3 {
-  position: absolute;
+.movie-content h3 {
   font-size: 1em;
-  justify-content: center;
-  align-items: center;
-  height: 35px;
-}
-
-.carousel-slide {
-  display: flex;
-  width: 100%;
-  height: 300px;
+  font-weight: bolder;
 }
 
 /*-------------------------------------------*\
         			  	BUTTONS
 \*-------------------------------------------*/
-
+/* CTA */
 #get-started {
   margin-top: 20px;
   cursor: pointer;
@@ -300,31 +296,36 @@ hr {
   justify-content: space-between;
 }
 
-#prevBtn {
-  position: absolute;
-  font-size: 1em;
-  left: 10px;
-  font-weight: 700;
-}
-
-#nextBtn {
-  position: absolute;
-  font-size: 1em;
-  right: 10px;
-  font-weight: 700;
-}
-
+/* Carousel */
 #prevBtn,
 #nextBtn {
+  z-index: 99;
   cursor: pointer;
-  background: #fff;
+  position: absolute;
+  font-size: 1em;
+  font-weight: 700;
+  background-color: rgb(255 255 255 / 85%);
   border: 0;
   border-radius: 50%;
   outline: none;
   width: 30px;
   height: 30px;
+  transition: 0.6s ease;
   padding: 2px;
   box-shadow: 1px 1px 7px #b9b9b9;
+}
+
+#prevBtn {
+  left: 10px;
+}
+
+#nextBtn {
+  right: 10px;
+}
+
+#prevBtn:hover,
+#nextBtn:hover {
+  background-color: #fff;
 }
 
 /*-------------------------------------------*\
@@ -339,11 +340,24 @@ hr {
 }
 
 /*-------------------------------------------*\
+        			   FOOTER
+\*-------------------------------------------*/
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* background-image: */
+}
+
+
+/*-------------------------------------------*\
         			MEDIA QUERIES
 \*-------------------------------------------*/
 @media only screen and (min-width: 720px) {
   header {
     justify-content: space-between;
+    /* background-image: transparent; */
   }
 
   #menuToggler {
@@ -365,6 +379,8 @@ hr {
     background-color: transparent;
     height: auto;
     width: auto;
+    border: 0;
+    background-image: linear-gradient(76deg, #16161600 20%, #30303000 74%);
   }
 
   #links img {
