@@ -39,7 +39,7 @@ async function storeMovieData() {
   var width = 800;
   var margin = { left: 50, right: 50, top: 40, bottom: 0 };
 
-  var svg = d3.select("body")
+  var svg = d3.select("#viz")
     .append("svg")
       .attr("height", "100%")
       .attr("width", "100%");
@@ -61,7 +61,7 @@ async function storeMovieData() {
     .domain([d3.min(movieRatingCount), d3.max(movieRatingCount)])
     .range([5, 20]);
 
-  var tooltip = d3.select("body")
+  var tooltip = d3.select("#viz")
     .append("div")
       .attr("class", "tooltip")
       .style("position", "absolute")

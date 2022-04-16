@@ -8,36 +8,79 @@
   <script src="d3.v7.js"></script>
 </head>
 
-<body>
-  <!-- Header -->
-  <header>
-    <div id="logo">
-      <h1 class="cinemalizer"><a href="index.html"><img src="../media/cinemalizer.svg" alt="Cinemalizer logo"></a></h1>
-    </div>
+<!-- Header -->
+<header>
+  <div id="logo">
+    <!-- <h1 class="cinemalizer"><a href="index.html"><img src="../media/cinemalizer-logo-v2.svg" alt="Cinemalizer logo"></a></h1> -->
+    <h1>Cinemalizer</h1>
+  </div>
 
-    <div id="menuToggler"></div>
-    <nav id="menu">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li class="active"><a href="interact.html">Interact</a></li>
-      </ul>
-    </nav>
+  <div id="menuToggler">≡</div> <!-- TODO: Use other menu icon inside media folder -->
+  <nav id="menu">
+    <div id="links">
+      <a href="https://www.linkedin.com/in/erica-thuet/" title="LinkedIn profile link" target="_blank"><img src="../media/linkedin-logo.png" alt="LinkedIn logo"></a>
+      <a href="https://github.com/erica63" title="GitHub profile link" target="_blank"><img src="../media/github-logo.png" alt="GitHub logo"></a>
+      <a href="https://d3js.org/" title="D3.JS website link" target="_blank"><img src="../media/d3js-logo.png" alt="D3.JS logo"></a>
+      <a href="https://imdb-api.com/" title="ImDb api link" target="_blank"><img src="../media/imdb-logo.png" alt="ImDb logo"></a>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li class="active"><a href="interact.html">Interact</a></li>
+    </ul>
+  </nav>
 </header>
 
-  <section id="top250">
-    <div class="img-container">
-      <h2>Top 250 Bubble Chart</h2>
+  <section id="bubble-chart">
+    <div class="container">
+      <h2>Bubble Chart</h2>
+      <hr>
+      <p>
+        A bubble chart is lorem ipsum dolor sit amet, consectetur adipisicing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+        enim ad minim veniam
+      </p>
+      <div id="viz"></div>
     </div>
   </section>
 
-  <!-- <section id="bubble-chart">
-    <div id="viz"></div>
-  </section> -->
+  <section id="bar-chart">
+    <div class="container">
+      <h2>Bar Chart</h2>
+      <hr>
+      <p>
+        A bar chart is lorem ipsum dolor sit amet, consectetur adipisicing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+        enim ad minim veniam
+      </p>
+    </div>
+  </section>
 
-	<footer>
-		<script src="charts.js"></script>
-		<script src="menu.js"></script>
-	</footer>
+  <section id="unknown-chart">
+    <div class="container">
+      <h2>Unknown Chart</h2>
+      <hr>
+      <p>
+        Chart to be figured out is lorem ipsum dolor sit amet, consectetur adipisicing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+        enim ad minim veniam
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <h1>Cinemalizer</h1>
+      <p>For movie lovers, made by a movie lover.</p>
+      <div id="links">
+        <a href="https://www.linkedin.com/in/erica-thuet/" title="LinkedIn profile link" target="_blank"><img src="../media/linkedin-logo.png" alt="LinkedIn logo"></a>
+        <a href="https://github.com/erica63" title="GitHub profile link" target="_blank"><img src="../media/github-logo.png" alt="GitHub logo"></a>
+        <a href="https://d3js.org/" title="D3.JS website link" target="_blank"><img src="../media/d3js-logo.png" alt="D3.JS logo"></a>
+        <a href="https://imdb-api.com/" title="ImDb api link" target="_blank"><img src="../media/imdb-logo.png" alt="ImDb logo"></a>
+      </div>
+      <script src="charts.js"></script>
+      <script src="menu.js"></script>
+    </div>
+  </footer>
 
 </body>
 </html>

@@ -97,10 +97,11 @@ nav li:hover,
   margin: 2px;
   width: 45px;
   transition: all .5s ease;
+  border-radius: 50vw;
 }
 
 #links img:hover {
-  filter: brightness(0.8);
+  filter: brightness(0.1) invert(1);
   transform: translateY(-0.15em);
 	transition: all .5s ease;
 }
@@ -119,16 +120,6 @@ nav li:hover,
   min-height: 70%;
   overflow: hidden;
 } */
-
-/* Section imgs */
-/* #welcome { */
-  /* background-image: url(https://s3-eu-west-1.amazonaws.com/storage.netro42.net/storage.wrenarchitecture.com/dynamic/5/photos/958000/original/2958.jpg); */
-  /* background-image: url(https://static.storyhouse.com/app/uploads/2016/10/Storyhouse_0074_cPeter-Cook-scaled.jpg); */
-/* } */
-
-#top250 {
-  background-image: url(https://i.dailymail.co.uk/1s/2021/11/24/11/50911809-0-image-a-22_1637752428418.jpg);
-}
 
 /*-------------------------------------------*\
         				CONTAINERS
@@ -185,6 +176,7 @@ hr {
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
+  align-content: center;
   margin: 30px;
   /* background-color: #1f1f1f; */
   border-radius: 30px;
@@ -237,13 +229,15 @@ hr {
   transition: all 0.3s ease;
   border-radius: 30px;
   padding: 3vh 0 8vh 0;
-  margin: 7vw;
+  margin: 30px;
 }
 
 .carousel-container img {
   width: 150px;
   transition: all 0.3s ease;
-  border: 3px solid white;
+  /* border: 3px solid white; */
+  border-radius: 20px;
+  box-shadow: -2px 2px 0px #fff;
 }
 
 .card {
@@ -343,12 +337,36 @@ hr {
         			   FOOTER
 \*-------------------------------------------*/
 footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  /* background-image: */
+  height: auto;
+  width: 100vw;
+  background-image: linear-gradient(76deg, #161616 20%, #303030 74%);
+  border-top: 3px solid #dc143c;
 }
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.footer-content h1 {
+  font-size: 2em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.footer-content p {
+  color: #cacdd2;
+  margin: 10px auto;
+  line-height: 20px;
+}
+
+.footer-content #links {
+  padding-bottom: 15px;
+}
+
 
 
 /*-------------------------------------------*\
@@ -357,7 +375,6 @@ footer {
 @media only screen and (min-width: 720px) {
   header {
     justify-content: space-between;
-    /* background-image: transparent; */
   }
 
   #menuToggler {
