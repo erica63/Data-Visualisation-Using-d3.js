@@ -16,13 +16,11 @@ async function sendApiRequest() {
 sendApiRequest();
 
 async function populateComingSoon(data) {
-  /* Do I create an if statement, and make sure that the first 'card' aka
-  first movie img + text content is differentiated from the rest, so it can go back?
-  Or is that not a big deal? I guess its not a big deal. */
   const carouselDiv = document.createElement("div");
   const movieImg = document.createElement("img");
   const movieContentDiv = document.createElement("div");
   const movieTitle = document.createElement("h3");
+  // OPTIONAL TODO: Add another element showing what date the movies are being released
   const movieRating = document.createElement("p");
 
   carouselDiv.classList.add("card")
@@ -43,13 +41,20 @@ async function populateComingSoon(data) {
   carouselDiv.appendChild(movieContentDiv);
   movieContentDiv.appendChild(movieTitle);
   movieContentDiv.appendChild(movieRating);
+  showMovies(carouselIndex);
 }
 
 const prevBtn = document.querySelector('#prevBtn');
 const nextBtn = document.querySelector('#nextBtn');
 
+// Create button delay
+// document.querySelector('#get-started').addEventListener('click', ev=> {
+//   setTimeout(function (e) {
+//     window.location.href = "interact.html"
+//   }, 420)
+// })
+
 let carouselIndex = 1;
-// showMovies(carouselIndex);
 // showMovies();
 
 function nextMovie(n) {
@@ -69,7 +74,7 @@ function showMovies(n) {
 
 /* Button event listeners */
 prevBtn.addEventListener('click', ()=> {
-  nextMovie(-1);
+    nextMovie(-1);
 })
 
 nextBtn.addEventListener('click', ()=> {
