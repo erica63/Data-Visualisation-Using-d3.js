@@ -34,19 +34,18 @@
   <section id="hero">
     <div class="hero-container">
       <div class="text-content">
-        <!-- <h2>The best way to find something to watch!</h2> -->
         <h2>Find your next movie.</h2>
         <h3>With dynamic data visualizations</h3>
       </div>
       <div class="picture-content">
         <img src="../media/popcorn-bubble-chart.png">
         <!-- <img src="../media/popcorn1.png"> -->
-        <button id="get-started" href="interact.html">Get started<img src="../media/arrow.svg"</button>
+        <button id="get-started"><a href="interact.html">Get started</a><img src="../media/arrow.svg"</button>
       </div>
     </div>
   </section>
 
-  <section>
+  <section id="features">
     <div class="row">
       <h2>Features</h2>
       <hr>
@@ -83,30 +82,40 @@
         <p>Most importantly, interactive charts.</p>
       </div>
     </div>
+</section>
+
+<section id="carousel">
+  <div class="row">
+    <h2>Coming Soon</h2>
+    <hr>
+  </div>
+  <div class="movie-nav">
+    <button id="prevBtn">&#60;</button>
+    <button id="nextBtn">&#62;</button>
+  </div>
+  <div class="carousel-container">
+    <!-- JS populates this section with API fetch -->
+    <!-- TODO: Create fade between each movie card? -->
   </div>
 </section>
 
-<!-- TODO: HTML code below needs attention. Readjust and make consistent with
-the rest of the website. -->
-  <section id="carousel">
-    <div class="carousel-container">
-      <h2>Coming Soon</h2>
-      <hr>
-      <!-- JS populates this section with API fetch -->
-      <!-- TODO: Looks like the buttons might need to be contained in some sort of way -->
-      <!-- TODO: Create fade between each movie card -->
-      <button id="prevBtn">&#60;</button>
-      <button id="nextBtn">&#62;</button>
-    </div>
-  </section>
-
   <!-- Call To Action -->
   <section id="cta">
-    <div class="container">
-      <h2>Interact with data now</h2>
+    <div class="row">
+      <h2>Data exploration</h2>
       <hr>
+    </div>
+    <div class="cta-container">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+        culpa qui officia deserunt mollit anim id est laborum.
+      </p>
       <img src="../media/funny-pie-chart.png">
-      <a class="btn" href="interact.html">Find Patterns</a>
+      <button id="get-started"><a href="interact.html">Interact now</a><img src="../media/arrow.svg"</button>
     </ul>
   </div>
 </section>
