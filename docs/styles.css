@@ -95,7 +95,7 @@ nav li:hover,
 
 #links img {
   margin: 2px;
-  width: 45px;
+  width: 40px;
   transition: all .5s ease;
   border-radius: 50vw;
 }
@@ -110,16 +110,21 @@ nav li:hover,
   width: auto;
 }
 
-/* Section */
-/* section {
+/*-------------------------------------------*\
+        				ALL SECTIONS
+\*-------------------------------------------*/
+section {
+  margin-bottom: 4vw;
+}
+
+#features,
+#carousel,
+#cta {
   display: flex;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  flex-direction: column;
   justify-content: center;
-  min-height: 70%;
-  overflow: hidden;
-} */
+  align-items: center;
+}
 
 /*-------------------------------------------*\
         				CONTAINERS
@@ -127,7 +132,7 @@ nav li:hover,
 hr {
   border: 0;
   border-top: 3px solid #dc143c;
-  width: 200px;
+  width: 250px;
   margin-top: 5px;
   margin-bottom: 25px;
 }
@@ -171,25 +176,12 @@ hr {
   height: 250px;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-  margin: 30px;
-  /* background-color: #1f1f1f; */
-  border-radius: 30px;
-  padding: 7vw;
-  background-image: linear-gradient(76deg, #161616 20%, #303030 74%);
-}
-
-.container h2,
 .carousel-container h2 {
   font-size: 2em;
   font-weight: lighter;
 }
 
+/* FEATURES SECTION */
 .row {
   display: flex;
   flex-direction: row;
@@ -205,11 +197,6 @@ hr {
   margin: 10px;
   margin-top: 50px;
 }
-
-/* .column {
-  border: 1px solid orange;
-  padding: 1em;
-} */
 
 .features-card {
   padding: 20px;
@@ -231,6 +218,9 @@ hr {
   place-items: center;
   border-radius: 50%;
   color: #fff;
+  /* filter: brightness(.9) invert(0.9); */
+  filter: brightness(.5);
+  /* border: 2px solid #fff; */
 }
 
 .features-card h3 {
@@ -248,37 +238,8 @@ hr {
 .features-card:hover {
   transform: translateY(-0.4em);
   transition: all.3s ease;
+  /* border: 1px solid #dc143c; */
 }
-
-.features-content {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  padding-bottom: 20px;
-}
-
-.features-content h3 {
-  text-transform: uppercase;
-}
-
-.features-content img {
-  height: 40px;
-  border-radius: 50vw;
-  /* filter: brightness(.9) invert(1); */
-  /* filter: brightness(.9) invert(.9); */
-  margin-right: 10px;
-}
-
-.features-content p {
-  margin-left: 20px;
-}
-
-/* #carousel {
-  width: 300px;
-  height: 500px;
-  margin: 0 auto;
-  position: relative;
-} */
 
 .carousel-container {
   display: flex;
@@ -288,12 +249,25 @@ hr {
   background-image: linear-gradient(76deg, #161616 20%, #303030 74%);
   transition: all 0.3s ease;
   border-radius: 30px;
-  padding: 3vh 0 8vh 0;
-  margin: 30px;
+  margin: 15px 20px;
+  padding: 20px;
+  min-width: 200px;
+  min-height: 350px;
+}
+
+.cta-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-image: linear-gradient(76deg, #161616 20%, #303030 74%);
+  max-width: 300px;
+  border-radius: 30px;
+  padding: 20px;
+  margin: 0 20px;
 }
 
 .carousel-container img {
-  width: 150px;
+  height: 230px;
   transition: all 0.3s ease;
   /* border: 3px solid white; */
   border-radius: 20px;
@@ -302,17 +276,62 @@ hr {
 
 .card {
   display: none;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  max-width: 200px;
+  max-height: 350px;
+  padding-top: 10px;
+  animation-fill-mode: both;
+  animation-duration: 1s;
 }
 
-.movie-content {
-  position: absolute;
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-.movie-content h3 {
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+}
+
+.mobile-details,
+.tablet-details,
+.desktop-details {
+  padding: 20px 0;
+  margin: 0 20px;
+}
+
+.mobile-details h3 {
   font-size: 1em;
   font-weight: bolder;
+  text-transform: uppercase;
 }
 
+.tablet-details {
+  display: none;
+}
+
+.tablet-details p {
+  padding: 0 15px;
+}
+
+.desktop-details {
+  display: none;
+}
+
+.desktop-details p {
+  padding: 0 15px;
+}
+
+
+/* final CTA */
 #cta img {
   width: 300px;
 }
@@ -354,12 +373,15 @@ hr {
   justify-content: space-between;
 }
 
-/* Carousel */
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
 #prevBtn,
 #nextBtn {
   z-index: 99;
   cursor: pointer;
-  position: absolute;
   font-size: 1em;
   font-weight: 700;
   background-color: rgb(255 255 255 / 85%);
@@ -371,14 +393,7 @@ hr {
   transition: 0.6s ease;
   padding: 2px;
   box-shadow: 1px 1px 7px #b9b9b9;
-}
-
-#prevBtn {
-  left: 10px;
-}
-
-#nextBtn {
-  right: 10px;
+  margin: 0 20px;
 }
 
 #prevBtn:hover,
@@ -402,7 +417,6 @@ hr {
 \*-------------------------------------------*/
 footer {
   height: auto;
-  width: 100vw;
   background-image: linear-gradient(76deg, #161616 20%, #303030 74%);
   border-top: 3px solid #dc143c;
 }
@@ -432,11 +446,10 @@ footer {
 }
 
 
-
 /*-------------------------------------------*\
         			MEDIA QUERIES
 \*-------------------------------------------*/
-@media only screen and (min-width: 687px) {
+@media only screen and (min-width: 688px) {
   header {
     justify-content: space-between;
   }
@@ -463,7 +476,7 @@ footer {
   }
 
   #links img {
-    width: 35px;
+    width: 36px;
   }
 
   nav ul {
@@ -478,7 +491,6 @@ footer {
 
   .picture-content img {
     height: 350px;
-    margin-right: 30px;
   }
 
   .text-content h2 {
@@ -488,6 +500,38 @@ footer {
   .row {
     margin: 0 8vw;
   }
+
+  .row h2 {
+    font-size: 2.4em;
+  }
+
+  .carousel-container {
+    /* max-width: 500px; */
+    min-width: 500px;
+  }
+
+  .card {
+    max-width: 600px;
+    align-content: center;
+    flex-wrap: wrap;
+  }
+
+  .mobile-details {
+    display: flex;
+    flex-direction: column;
+    max-width: 160px;
+  }
+
+  .tablet-details {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin-top: 55px;
+  }
+
+  .cta-container {
+    max-width: 600px;
+  }
 }
 
 
@@ -496,8 +540,8 @@ footer {
     margin: 0 15vw;
   }
 
-  .picture-content {
-    width: auto;
+  .row h2 {
+    font-size: 2.8em;
   }
 
   .picture-content img {
@@ -506,6 +550,29 @@ footer {
 
   .text-content h2 {
     font-size: 5em;
+  }
+
+  .carousel-container {
+    min-width: 800px;
+  }
+
+  .tablet-details {
+    flex-direction: row;
+    margin-top: 15px;
+  }
+
+  .desktop-details {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .tablet-details,
+  .desktop-details {
+    max-width: 550px;
+  }
+
+  .cta-container {
+    max-width: 800px;
   }
 }
 
