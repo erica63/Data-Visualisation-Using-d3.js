@@ -11,6 +11,7 @@ body {
   font-family: 'Questrial', sans-serif;
   height: 100%;
   background-color: #111112;
+  /* Possibly swap over to #1a1a1a, or #161616 */
   color: #fff;
 }
 
@@ -402,14 +403,45 @@ a {
 }
 
 /*-------------------------------------------*\
-        					D3.JS
+        			INTERACT.HTML
 \*-------------------------------------------*/
-.bubbles:hover {
-  stroke: black;
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(76deg, #161616 20%, #303030 74%);
+  transition: all 0.3s ease;
+  border-radius: 30px;
+  margin: 15px 20px;
+  padding: 20px;
+  min-width: 200px;
+  min-height: 800px;
 }
 
+svg {
+  height: 700px
+}
 .tooltip {
-  border: solid 1px black;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: 1;
+  padding: 3% 3% 3% 0;
+  text-align: center;
+  width: 150px;
+}
+
+.tooltip-poster {
+  width: 150px;
+  margin: auto;
+}
+
+
+/*-------------------------------------------*\
+        					D3.JS
+\*-------------------------------------------*/
+
+.bubbles:hover {
+  stroke: black;
 }
 
 /*-------------------------------------------*\
