@@ -35,6 +35,13 @@ d3.json("https://imdb-api.com/API/AdvancedSearch/k_2p3rswvr?groups=top_250&count
   const data = d.results;
   const movieGenreList = data
 
+  /* A div with id "loader" has been creating within interact.html, and has
+  been styled appropriately to be a loading animation. It's initial state is
+  display: block, up until the chart shows up which changes it's state to be
+  hidden thus indicating that the chart has loaded in. */
+  const loadingAnimation = document.getElementById("loader");
+  loadingAnimation.style.display = "none";
+
   /* Iterating through JSON items and storing the elements within a corresponding
    * array variable. An extra precaution has been taken in parsing the elements
    * into their appropriate data types, as the API returns all data as strings.
@@ -170,7 +177,6 @@ d3.json("https://imdb-api.com/API/AdvancedSearch/k_2p3rswvr?groups=top_250&count
    * bubbles opacities are lowered.
    * @param  {bubbles#event:mouseover} ev - Mouseover event
    * @param  {string} d - Genre selection from the cases
-   * @return {[type]} [description]
    */
   const highlightGenre = function(ev, d) {
     // Lower opacity on bubbles that are not in the genre
@@ -220,6 +226,10 @@ d3.json("https://imdb-api.com/API/AdvancedSearch/k_2p3rswvr?groups=top_250&count
   let chartGroup = svg.append("g")
   .attr("transform", "translate("+margin.left+","+margin.top+")")
 
+/**
+ * Create circle for every data point, and then attach each genre from the
+ * genreList array as a class name.
+ */
   chartGroup.selectAll("circle")
     .data(data)
     .enter()
@@ -229,15 +239,14 @@ d3.json("https://imdb-api.com/API/AdvancedSearch/k_2p3rswvr?groups=top_250&count
         let done = false;
         d.genreList.forEach((item, i) => {
           genres = genres + " " + item.value
-          if (i == (d.genreList.length - 1)) {
+          if (i == (d.genreList.length - 1)) { // So the index and array length match
               done = true;
           }
         });
         if (done == true) {
-          console.log(genres);
           return "bubbles" + genres
         }
-    })
+      })
       .attr("cx", function(d, i) { return x(movieYear[i]); })
       .attr("cy", function(d, i) { return y(movieRating[i]); })
       .attr("r", 0) // Set to 0, size will change during animation
@@ -271,20 +280,18 @@ d3.json("https://imdb-api.com/API/AdvancedSearch/k_2p3rswvr?groups=top_250&count
       .scaleExtent([.9, 2.5])
       .on("zoom", zoomed));
 
-    function zoomed({transform}) {
-      chartGroup.attr("transform", transform);
-    }
+  function zoomed({transform}) {
+    chartGroup.attr("transform", transform);
+  }
 
   /*-----------------------------*\
             ANIMATION
   \*-----------------------------*/
-  /*
-  The following code gives a basic animation to the bubbles when it loads.
+  /* The following code gives a basic animation to the bubbles when it loads.
   This is done by first giving the circle radius an attribute size of 0 so the
   bubbles don't initially appear, and thereafter given their appropriate size.
   A slight delay has been added to give the effect that they are loading in one
-  at a time.
-   */
+  at a time. */
   chartGroup.selectAll("circle")
     .transition()
     .duration(300)
@@ -340,7 +347,7 @@ d3.json("https://imdb-api.com/API/AdvancedSearch/k_2p3rswvr?groups=top_250&count
     .attr("text-anchor", "middle")
     .attr("fill", "white");
 
-    // Adding one dot in the legend for each name.
+  // Adding one dot in the legend for each name.
   const size = 20
   const genres = ["Comedy", "Horror", "Mystery", "Action", "Fantasy"]
   svg.selectAll("myrect")
