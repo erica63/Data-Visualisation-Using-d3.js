@@ -167,6 +167,22 @@ d3.json("https://imdb-api.com/API/AdvancedSearch/k_2p3rswvr?groups=top_250&count
   }
 
   /*-----------------------------*\
+      MOVIE DETAILS ON CLICK
+  \*-----------------------------*/
+  const selectBubble = function(ev, d) {
+    console.log(d);
+    d3.select(".movie-container")
+      .html('<img class="movie-poster" src=' + d.image + '></img></div>'
+        + '<h3>' + d.title + '</h3>'
+        + '<h3>Year: ' + d.description + '</h3>'
+        + '<h3>IMDB Rating: ' + d.imDbRating + '</h3>'
+        + '<h3>Metacritic Rating: ' + d.metacriticRating + '</h3>'
+        + '<h3>Plot</h3> <p>' + d.plot + '</p>'
+        + '<h3>Cast</h3> <p>' + d.stars + '</p>')
+      // .html('<iframe width="560" height="315" src="https://www.youtube.com/embed/' + d.videoId + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
+  }
+
+  /*-----------------------------*\
               HIGHLIGHT
   \*-----------------------------*/
   /**
@@ -256,6 +272,7 @@ d3.json("https://imdb-api.com/API/AdvancedSearch/k_2p3rswvr?groups=top_250&count
     .on("mouseover", showTooltip)
     .on("mousemove", moveTooltip)
     .on("mouseleave", hideTooltip)
+    .on("click", selectBubble)
 
 
   chartGroup.append("g")
