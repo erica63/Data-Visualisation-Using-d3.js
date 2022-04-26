@@ -109,7 +109,7 @@ d3.json("https://imdb-api.com/API/AdvancedSearch/k_2p3rswvr?groups=top_250&count
   // Bubble radius scale is based on the total number movie ratings
   const bubbleScale = d3.scaleLinear()
     .domain([d3.min(movieRatingCount), d3.max(movieRatingCount)])
-    .range([3, 20]);
+    .range([5, 25]);
 
   // MIGHT REMOVE THIS
   const genreColour = d3.scaleOrdinal()
@@ -303,7 +303,7 @@ d3.json("https://imdb-api.com/API/AdvancedSearch/k_2p3rswvr?groups=top_250&count
                 LEGEND
   \*-----------------------------*/
   // Adding the circles (Total rating count = bubble radius scale size)
-  const legendValues = [20000, 500000, 2600000]
+  const legendValues = [20000, 1000000, 2600000]
   const legendCircle = 900
   const legendLabel = 950
 
@@ -382,52 +382,3 @@ that hexadecimal value associated with that colour is applied to all the circles
 document.getElementById("colour-picker").addEventListener("change", ev => {
   changeColor(document.getElementById("colour-picker").value)
 });
-
-/*-----------------------------*\
-            BRUSH
-\*-----------------------------*/
-/* I've placed this here and commented this out for a few reasons.
-First of all it is an interesting feature to add, but unfortunately it counters
-the tooltip. When enabling this, tooltip functionality is lost.
-In addition, the code is not entirely up to date and therefore is throwing a
-few errors. It can, however, be amended and improved. The importance of
-implementing such a feature will be discussed in my upcoming supervisor meeting.
-*/
-
-// const brush = d3.brushX()
-//   .extent([[0, 0], [800, 600]])
-//   .on("end", updateChart);
-//
-// chartGroup = svg.append("g")
-//   .attr("clip-path", "url(#clip)");
-//
-// chartGroup.append("g")
-//   .attr("class", "brush")
-//   .call(brush);
-
-/* This makes sure that the user cannot use the brush feature outside of the
-bubble chart. */
-// const clip = svg.append("defs").append("svg:clipPath")
-//   .attr("id", "clip")
-//     .append("svg:rect")
-//     .attr("width", width )
-//     .attr("height", height )
-//     .attr("x", 0)
-//     .attr("y", 0);
-//
-// const idleTimeout = function idled() { idleTimeout = null; };
-//
-// function updateChart() {
-//   extent = d3.event.selection
-//
-//   if (!extent) {
-//     if (!idleTimeout) return idleTimeout = setTimeout(idled, 350);
-//     x.domain([d3.min(movieYear), d3.max(movieYear)]) // Reset domain
-//   } else {
-//     x.domain([x.invert(extent[0]), x.invert(extent[1])])
-//     chartGroup.selectAll("circle")
-//       .transition().duration(1000)
-//       .attr("cx", function(d, i) { return x(movieYear[i]); })
-//       .attr("cy", function(d, i) { return y(movieRating[i]); })
-//   }
-// }
