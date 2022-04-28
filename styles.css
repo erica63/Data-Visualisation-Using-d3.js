@@ -6,6 +6,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   font-family: 'Questrial', sans-serif;
@@ -309,6 +313,10 @@ hr {
 .desktop-details {
   padding: 20px 0;
   margin: 0 20px;
+}
+
+.mobile-details {
+  max-height: 80px;
 }
 
 .mobile-details h3 {
