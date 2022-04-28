@@ -74,30 +74,25 @@ d3.json("https://imdb-api.com/API/AdvancedSearch/k_2p3rswvr?groups=top_250&count
              AXIS/SCALE
   \*-----------------------------*/
   // Y axis scale is based on what average rating the movies have garnered.
-  const y = d3.scaleLinear()
+  let y = d3.scaleLinear()
     .domain([7.9, d3.max(movieRating)])
     .range([height, 0]);
 
-  const yAxis = d3.axisLeft(y);
+  let yAxis = d3.axisLeft(y);
   // https://github.com/d3/d3-axis/blob/main README.md#axis_ticks
 
-
-
   // X axis scale is based on what years the movies have been released
-  const x = d3.scaleTime()
+  let x = d3.scaleTime()
     .domain([d3.min(movieYear), d3.max(movieYear)])
     .range([0, width]);
 
-  const xAxis = d3.axisBottom(x);
-
-
+  let xAxis = d3.axisBottom(x);
 
   // Bubble radius scale is based on the total number movie ratings
   const bubbleScale = d3.scaleLinear()
     .domain([d3.min(movieRatingCount), d3.max(movieRatingCount)])
     .range([5, 25]);
 
-  // MIGHT REMOVE THIS
   const genreColour = d3.scaleOrdinal()
     .domain(["Comedy", "Horror", "Mystery", "Action", "Fantasy"])
     .range(d3.schemeSet1);
@@ -159,13 +154,12 @@ d3.json("https://imdb-api.com/API/AdvancedSearch/k_2p3rswvr?groups=top_250&count
     console.log(d);
     d3.select(".movie-container")
       .html('<img class="movie-poster" src=' + d.image + '></img></div>'
-        + '<h3>' + d.title + '</h3>'
-        + '<h3>Year: ' + d.description + '</h3>'
-        + '<h3>IMDB Rating: ' + d.imDbRating + '</h3>'
-        + '<h3>Metacritic Rating: ' + d.metacriticRating + '</h3>'
-        + '<h3>Plot</h3> <p>' + d.plot + '</p>'
-        + '<h3>Cast</h3> <p>' + d.stars + '</p>')
-      // .html('<iframe width="560" height="315" src="https://www.youtube.com/embed/' + d.videoId + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
+        + '<div class="movie-info"><h3>' + d.title + '</h3>'
+        + '<h4>Year: ' + d.description + '</h4>'
+        + '<h4>IMDB Rating: ' + d.imDbRating + '</h4>'
+        + '<h4>Metacritic Rating: ' + d.metacriticRating + '</h4>'
+        + '<h4>Plot</h4> <p>' + d.plot + '</p>'
+        + '<h4>Cast</h4> <p>' + d.stars + '</p></div>')
   }
 
   /*-----------------------------*\
@@ -275,6 +269,7 @@ const selectHighlightGenre = function(ev, d) {
   // Placing axis and chart within a group so the data is in correct position at all times
   let chartGroup = svg.append("g")
   .attr("transform", "translate("+margin.left+","+margin.top+")")
+  .attr("clip-path", "url(#clip)")
 
 /**
  * Create circle for every data point, and then attach each genre from the
@@ -308,7 +303,6 @@ const selectHighlightGenre = function(ev, d) {
     .on("mouseleave", hideTooltip)
     .on("click", selectBubble)
 
-
   chartGroup.append("g")
     .attr("class", "axis y")
     .call(yAxis);
@@ -328,11 +322,19 @@ const selectHighlightGenre = function(ev, d) {
   but zooming still works without a problem. */
   svg.call(d3.zoom()
     .extent([[0, 0], [width, height]])
-      .scaleExtent([.9, 2.5])
+      .scaleExtent([1, 2.5]) //how much you can zoom in or out
       .on("zoom", zoomed));
 
   function zoomed({transform}) {
     chartGroup.attr("transform", transform);
+
+    /* Attempts made to rescale the axis on zoom */
+    // const newX = d3.zoomIdentity.rescaleX(x);
+    // const newY = d3.zoomIdentity.rescaleY(y);
+    //
+    // chartGroup.selectAll("circle")
+    //   .attr("cx", function(d, i) { return newX(movieYear[i]); })
+    //   .attr("cy", function(d, i) { return newY(movieRating[i]); });
   }
 
   /*-----------------------------*\
@@ -349,6 +351,9 @@ const selectHighlightGenre = function(ev, d) {
     .attr("r", function (d, i) { return bubbleScale(movieRatingCount[i]); })
     .delay((d, i) => { return i*10});
 
+  /*-----------------------------*\
+              LABELS
+  \*-----------------------------*/
   // X axis label
   chartGroup.append("text")
     .attr("text-anchor", "end")
