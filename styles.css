@@ -120,7 +120,8 @@ section {
 
 #features,
 #carousel,
-#cta {
+#movie-information,
+#bubble-chart {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -414,7 +415,7 @@ a {
   border-radius: 30px;
   margin: 15px 20px;
   padding: 20px;
-  min-width: 200px;
+  min-width: 1050px;
   min-height: 800px;
 }
 
@@ -459,9 +460,6 @@ svg {
 	border-width: 0.3em;
   border-color: hsl(348deg 83% 47%) white;
   border-radius: 50%;
-	/* position: fixed; */
-	/* left: calc(50vw - 0.5em); */
-	/* top: calc(40vw - 0.5em); */
   margin: 10vw 45vw;
 	display: block;
   animation: spin 2s linear infinite;
@@ -501,6 +499,16 @@ svg {
   margin: 15px;
   width: 200px;
   border-radius: 20px;
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+}
+
+h4 {
+  padding: 5px 0;
 }
 
 
@@ -624,6 +632,15 @@ footer {
   .cta-container {
     max-width: 600px;
   }
+
+  .movie-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .movie-info {
+    max-width: 350px;
+  }
 }
 
 
@@ -666,6 +683,30 @@ footer {
 
   .cta-container {
     max-width: 800px;
+  }
+
+  .movie-container {
+    max-width: 900px;
+  }
+
+  .movie-poster {
+    width: 300px;
+  }
+
+  .movie-container h3 {
+    font-size: 2em;
+  }
+
+  .movie-container h4 {
+    font-size: 1.25em;
+  }
+
+  .movie-container p {
+    font-size: 1.1em;
+  }
+
+  .movie-info {
+    max-width: 500px;
   }
 }
 
