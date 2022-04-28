@@ -151,7 +151,7 @@ d3.json("https://imdb-api.com/API/AdvancedSearch/k_2p3rswvr?groups=top_250&count
       MOVIE DETAILS ON CLICK
   \*-----------------------------*/
   const selectBubble = function(ev, d) {
-    console.log(d);
+    document.getElementById("footer").scrollIntoView();
     d3.select(".movie-container")
       .html('<img class="movie-poster" src=' + d.image + '></img></div>'
         + '<div class="movie-info"><h3>' + d.title + '</h3>'
@@ -159,7 +159,8 @@ d3.json("https://imdb-api.com/API/AdvancedSearch/k_2p3rswvr?groups=top_250&count
         + '<h4>IMDB Rating: ' + d.imDbRating + '</h4>'
         + '<h4>Metacritic Rating: ' + d.metacriticRating + '</h4>'
         + '<h4>Plot</h4> <p>' + d.plot + '</p>'
-        + '<h4>Cast</h4> <p>' + d.stars + '</p></div>')
+        + '<h4>Cast</h4> <p>' + d.stars + '</p></div>');
+
   }
 
   /*-----------------------------*\
