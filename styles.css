@@ -164,6 +164,7 @@ hr {
   font-size: 1em;
   font-weight: lighter;
   padding: 15px;
+  color: #dfdfdf;
 }
 
 .picture-content {
@@ -436,8 +437,17 @@ svg {
 }
 
 .bubbles:hover {
+  cursor: pointer;
   stroke: white;
   stroke-width: 2px;
+}
+
+.label:hover {
+  cursor: pointer;
+}
+
+.clicked {
+  text-decoration: underline;
 }
 
 #loader {
@@ -672,5 +682,13 @@ footer {
 
   .text-content h2 {
     font-size: 6em;
+  }
+
+  .text-content h3 {
+    font-size: 1.2em;
+  }
+
+  .picture-content img {
+    height: 500px;
   }
 }

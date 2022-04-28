@@ -81,14 +81,7 @@ d3.json("https://imdb-api.com/API/AdvancedSearch/k_2p3rswvr?groups=top_250&count
   const yAxis = d3.axisLeft(y);
   // https://github.com/d3/d3-axis/blob/main README.md#axis_ticks
 
-  // Y axis label
-  svg.append("text")
-    .attr("text-anchor", "start")
-    .attr("x", 100)
-    .attr("y", 20)
-    .text("Rating")
-    .style("font-size", "1.5em")
-    .style("fill", "white");
+
 
   // X axis scale is based on what years the movies have been released
   const x = d3.scaleTime()
@@ -97,14 +90,7 @@ d3.json("https://imdb-api.com/API/AdvancedSearch/k_2p3rswvr?groups=top_250&count
 
   const xAxis = d3.axisBottom(x);
 
-  // X axis label
-  svg.append("text")
-    .attr("text-anchor", "end")
-    .attr("x", width)
-    .attr("y", height + 100)
-    .text("Years released")
-    .style("font-size", "1.5em")
-    .style("fill", "white");
+
 
   // Bubble radius scale is based on the total number movie ratings
   const bubbleScale = d3.scaleLinear()
@@ -196,30 +182,77 @@ d3.json("https://imdb-api.com/API/AdvancedSearch/k_2p3rswvr?groups=top_250&count
    */
   const highlightGenre = function(ev, d) {
     // Lower opacity on bubbles that are not in the genre
-    d3.selectAll(".bubbles").style("opacity", 0.1)
-    switch (d) {
-      case 'Comedy':
-      d3.selectAll("." + d).style("opacity", 1)
-      d3.selectAll("." + d).style("fill", "red")
-        break;
-      case 'Horror':
-      d3.selectAll("." + d).style("opacity", 1)
-      d3.selectAll("." + d).style("fill", "blue")
-        break;
-      case 'Mystery':
-      d3.selectAll("." + d).style("opacity", 1)
-      d3.selectAll("." + d).style("fill", "green")
-        break;
-      case 'Action':
-      d3.selectAll("." + d).style("opacity", 1)
-      d3.selectAll("." + d).style("fill", "purple")
-        break;
-      case 'Fantasy':
-      d3.selectAll("." + d).style("opacity", 1)
-      d3.selectAll("." + d).style("fill", "orange")
-        break;
-      default:
+    if (d3.selectAll('.clicked')._groups[0].length == 0) {
+      d3.selectAll(".bubbles").style("opacity", 0.1)
+      switch (d) {
+        case 'Comedy':
+        d3.selectAll("." + d).style("opacity", 1)
+        d3.selectAll("." + d).style("fill", "red")
+          break;
+        case 'Horror':
+        d3.selectAll("." + d).style("opacity", 1)
+        d3.selectAll("." + d).style("fill", "blue")
+          break;
+        case 'Mystery':
+        d3.selectAll("." + d).style("opacity", 1)
+        d3.selectAll("." + d).style("fill", "green")
+          break;
+        case 'Action':
+        d3.selectAll("." + d).style("opacity", 1)
+        d3.selectAll("." + d).style("fill", "purple")
+          break;
+        case 'Fantasy':
+        d3.selectAll("." + d).style("opacity", 1)
+        d3.selectAll("." + d).style("fill", "orange")
+          break;
+        default:
+      }
     }
+}
+
+/**
+ * selectHighlightGenre uses the same switch statements as highlightGenre function,
+ * but it works slightly differently. This allows the user to click on one of the
+ * genres listed next to the chart, and on click all the bubbles with that
+ * corresponding genre remain highlighted, whereas with highlightGenre the highlight
+ * would leave on hover.
+ * @param  {bubbles#event:clicked} ev - Mouseover event
+ * @param  {string} d - Genre selection from the cases
+ */
+const selectHighlightGenre = function(ev, d) {
+  // Lower opacity on bubbles that are not in the genre
+  d3.selectAll(".bubbles").style("opacity", 0.1)
+  d3.selectAll(".bubbles").classed("selected", false);
+  if (d3.selectAll(".label_" + d).classed("clicked")) {
+    d3.selectAll(".label_" + d).classed("clicked", false)
+  } else {
+    d3.selectAll(".label").classed("clicked", false);
+    d3.selectAll(".label_" + d).classed("clicked", true)
+  }
+  switch (d) {
+    case 'Comedy':
+    d3.selectAll("." + d).classed("selected", true)
+    d3.selectAll("." + d).style("opacity", 1)
+    d3.selectAll("." + d).style("fill", "red")
+      break;
+    case 'Horror':
+    d3.selectAll("." + d).style("opacity", 1)
+    d3.selectAll("." + d).style("fill", "blue")
+      break;
+    case 'Mystery':
+    d3.selectAll("." + d).style("opacity", 1)
+    d3.selectAll("." + d).style("fill", "green")
+      break;
+    case 'Action':
+    d3.selectAll("." + d).style("opacity", 1)
+    d3.selectAll("." + d).style("fill", "purple")
+      break;
+    case 'Fantasy':
+    d3.selectAll("." + d).style("opacity", 1)
+    d3.selectAll("." + d).style("fill", "orange")
+      break;
+    default:
+  }
 }
 
   /**
@@ -227,12 +260,13 @@ d3.json("https://imdb-api.com/API/AdvancedSearch/k_2p3rswvr?groups=top_250&count
    * the bubbles and chart back to their original states.
    * @param  {bubbles#event:mouseleave} ev - Mouseleave event
    * @param  {string} d - Genre selection from the cases
-   * @return {[type]} [description]
    */
   const noHighlight = function(ev, d) {
-    d3.selectAll(".bubbles").style("opacity", 1)
-      // .attr("fill", "#9cc8e3");
-      .style("fill", d =>  genreColour(d))
+    if (d3.selectAll('.clicked')._groups[0].length == 0) {
+      d3.selectAll(".bubbles").style("opacity", 1)
+        // .attr("fill", "#9cc8e3");
+        .style("fill", d =>  genreColour(d))
+      }
   }
 
   /*-----------------------------*\
@@ -315,7 +349,23 @@ d3.json("https://imdb-api.com/API/AdvancedSearch/k_2p3rswvr?groups=top_250&count
     .attr("r", function (d, i) { return bubbleScale(movieRatingCount[i]); })
     .delay((d, i) => { return i*10});
 
+  // X axis label
+  chartGroup.append("text")
+    .attr("text-anchor", "end")
+    .attr("x", width)
+    .attr("y", height + 100)
+    .text("Years released")
+    .style("font-size", "1.5em")
+    .style("fill", "white");
 
+  // Y axis label
+  chartGroup.append("text")
+      .attr("text-anchor", "start")
+      .attr("x", 100)
+      .attr("y", 20)
+      .text("Rating")
+      .style("font-size", "1.5em")
+      .style("fill", "white");
   /*-----------------------------*\
                 LEGEND
   \*-----------------------------*/
@@ -375,6 +425,7 @@ d3.json("https://imdb-api.com/API/AdvancedSearch/k_2p3rswvr?groups=top_250&count
       .attr("r", 7)
       .style("fill", d =>  genreColour(d))
     .on("mouseover", highlightGenre)
+    .on("click", selectHighlightGenre)
     .on("mouseleave", noHighlight);
 
     // Adding labels next to the dots
@@ -382,6 +433,7 @@ d3.json("https://imdb-api.com/API/AdvancedSearch/k_2p3rswvr?groups=top_250&count
     .data(genres)
     .enter()
     .append("text")
+      .attr("class", d => 'label label_' + d)
       .attr("x", 900 + size*.8)
       .attr("y", (d, i) =>  i * (size + 5) + (size / 2))
       .style("fill", d => genreColour(d))
@@ -389,6 +441,7 @@ d3.json("https://imdb-api.com/API/AdvancedSearch/k_2p3rswvr?groups=top_250&count
       .attr("text-anchor", "left")
       .style("alignment-baseline", "middle")
     .on("mouseover", highlightGenre)
+    .on("click", selectHighlightGenre)
     .on("mouseleave", noHighlight);
 });
 
