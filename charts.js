@@ -6,11 +6,11 @@ available one.
 "https://imdb-api.com/API/AdvancedSearch/k_32vrhx53?groups=top_250&count=250"
 Only do this if you have maxed out the API calls and nothing is showing up for
 over 30 seconds. */
-
 // Creating variables
 let movieYear = [];
 let movieRating = [];
 let movieRatingCount = [];
+let trailerURL = "";
 
 /**
  * Parses the specific string and returns either corresponding date, or null if
@@ -123,7 +123,12 @@ d3.json("https://imdb-api.com/API/AdvancedSearch/k_2p3rswvr?groups=top_250&count
   const showTooltip = function(ev, d) {
     tooltip
       .style("opacity", 1)
-      .html('<div class="tooltip"><p>' + d.title + '</p><img class="tooltip-poster" src=' + d.image + '></img></div>')
+      .html('<div class="tooltip"><p>'
+      + d.title + '</p><img class="tooltip-poster" src='
+      + d.image + '></img><p>Rating: '
+      + d.imDbRating + '</p><p>Votes: '
+      + d.imDbRatingVotes + '</p><p>Year: '
+      + d.description + '</p></div>')
   }
 
   /**
@@ -151,6 +156,7 @@ d3.json("https://imdb-api.com/API/AdvancedSearch/k_2p3rswvr?groups=top_250&count
       MOVIE DETAILS ON CLICK
   \*-----------------------------*/
   const selectBubble = function(ev, d) {
+    d3.json(`https://imdb-api.com/en/API/YouTubeTrailer/k_32vrhx53/${d.id}`).then(function(trailerData){
     document.getElementById("footer").scrollIntoView();
     d3.select(".movie-container")
       .html('<img class="movie-poster" src=' + d.image + '></img></div>'
@@ -159,9 +165,11 @@ d3.json("https://imdb-api.com/API/AdvancedSearch/k_2p3rswvr?groups=top_250&count
         + '<h4>IMDB Rating: ' + d.imDbRating + '</h4>'
         + '<h4>Metacritic Rating: ' + d.metacriticRating + '</h4>'
         + '<h4>Plot</h4> <p>' + d.plot + '</p>'
-        + '<h4>Cast</h4> <p>' + d.stars + '</p></div>');
+        + '<h4>Cast</h4> <p>' + d.stars + '</p></div>'
+        + '<iframe width="200" height="200" src="https://www.youtube.com/embed/' + trailerData.videoId + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; picture-in-picture" allowfullscreen></iframe>');
+  });
+}
 
-  }
 
   /*-----------------------------*\
               HIGHLIGHT
@@ -323,7 +331,7 @@ const selectHighlightGenre = function(ev, d) {
   but zooming still works without a problem. */
   svg.call(d3.zoom()
     .extent([[0, 0], [width, height]])
-      .scaleExtent([1, 2.5]) //how much you can zoom in or out
+      .scaleExtent([.7, 2.5]) //how much you can zoom in or out
       .on("zoom", zoomed));
 
   function zoomed({transform}) {
@@ -359,7 +367,7 @@ const selectHighlightGenre = function(ev, d) {
   chartGroup.append("text")
     .attr("text-anchor", "end")
     .attr("x", width)
-    .attr("y", height + 100)
+    .attr("y", height + 50)
     .text("Years released")
     .style("font-size", "1.5em")
     .style("fill", "white");
@@ -367,8 +375,8 @@ const selectHighlightGenre = function(ev, d) {
   // Y axis label
   chartGroup.append("text")
       .attr("text-anchor", "start")
-      .attr("x", 100)
-      .attr("y", 20)
+      .attr("x", 10)
+      .attr("y", 10)
       .text("Rating")
       .style("font-size", "1.5em")
       .style("fill", "white");

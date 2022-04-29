@@ -512,11 +512,15 @@ svg {
 .movie-info {
   display: flex;
   flex-direction: column;
-  max-width: 350px;
+  max-width: 200px;
 }
 
 h4 {
   padding: 5px 0;
+}
+
+iframe {
+  border-radius: 20px;
 }
 
 
@@ -644,10 +648,17 @@ footer {
   .movie-container {
     flex-direction: row;
     flex-wrap: wrap;
+    max-width: 600px;
   }
 
   .movie-info {
     max-width: 350px;
+  }
+
+  iframe {
+    width: 500px;
+    height: 270px;
+    margin: 20px 55px 20px;
   }
 }
 
@@ -698,7 +709,7 @@ footer {
   }
 
   .movie-poster {
-    width: 300px;
+    width: 250px;
   }
 
   .movie-container h3 {
@@ -715,6 +726,12 @@ footer {
 
   .movie-info {
     max-width: 500px;
+  }
+
+  iframe {
+    width: 700px;
+    height: 325px;
+    margin: 20px 100px 20px;
   }
 }
 
