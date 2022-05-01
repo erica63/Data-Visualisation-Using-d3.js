@@ -423,8 +423,8 @@ a {
   border-radius: 30px;
   margin: 15px 20px;
   padding: 20px;
-  min-width: 1050px;
-  min-height: 800px;
+  min-width: 80vw;
+  min-height: 80vh;
 }
 
 svg {
@@ -521,6 +521,7 @@ h4 {
 
 iframe {
   border-radius: 20px;
+  margin-left: 15px;
 }
 
 
@@ -732,6 +733,10 @@ footer {
     width: 700px;
     height: 325px;
     margin: 20px 100px 20px;
+  }
+
+  .chart-container {
+    min-width: 1050px;
   }
 }
 

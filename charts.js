@@ -431,7 +431,7 @@ const selectHighlightGenre = function(ev, d) {
   // Adding one dot in the legend for each name.
   const size = 20
   const genres = ["Comedy", "Horror", "Mystery", "Action", "Fantasy"]
-  svg.selectAll("myrect")
+  chartGroup.selectAll("myrect")
     .data(genres)
     .join("circle")
       .attr("cx", 900)
@@ -443,7 +443,7 @@ const selectHighlightGenre = function(ev, d) {
     .on("mouseleave", noHighlight);
 
     // Adding labels next to the dots
-  svg.selectAll("mylabels")
+  chartGroup.selectAll("mylabels")
     .data(genres)
     .enter()
     .append("text")

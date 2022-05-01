@@ -11,8 +11,6 @@ async function sendApiRequest() {
     for (let i = 0; i < dataY.length; i++) {
       populateComingSoon(dataY[i])
     }
-    console.log(data);
-    console.log(dataY);
 }
 sendApiRequest();
 
