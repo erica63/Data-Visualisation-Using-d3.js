@@ -468,7 +468,7 @@ svg {
 	border-width: 0.3em;
   border-color: hsl(348deg 83% 47%) white;
   border-radius: 50%;
-  margin: 10vw 45vw;
+  margin: 3vw 35vw;
 	display: block;
   animation: spin 2s linear infinite;
 	transition: 0.5s;
